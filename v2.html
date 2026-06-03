@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Türkiye Rota Pro PWA - Galeri Entegreli</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* ================= MODERN PREMIUM RENK PALETİ VE DEĞİŞKENLER ================= */
+    :root {
+      --bg-main: #090d16;
+      --bg-card: #131c2e;
+      --bg-header: rgba(17, 24, 39, 0.85);
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --success: #10b981;
+      --danger: #ef4444;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.06);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ================= GENEL AYARLAR ================= */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      -webkit-tap-highlight-color: transparent;
+      line-height: 1.5;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-header);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 20px;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #f59e0b, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .topbar div {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= İLERLEME ÇUBUĞU ================= */
+    .progress-wrapper {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 10px;
+      background: linear-gradient(90deg, #10b981, #059669);
+      width: 0%;
+      transition: var(--transition);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+    }
+
+    /* ================= LİSTE VE ETAPLAR ================= */
+    .container {
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .etap {
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .etap:hover {
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+
+    .etap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 6px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .etap h2 {
+      margin: 0;
+      padding: 14px 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .items {
+      display: none; 
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.5);
+      padding: 12px;
+      border-radius: var(--radius-md);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+    }
+
+    .item:hover {
+      transform: translateY(-2px);
+      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      cursor: zoom-in;
+      background: #151f32;
+      transition: var(--transition);
+    }
+
+    .item img:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .item b {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* ================= BUTONLAR VE DEĞİŞKEN DURUMLAR ================= */
+    button {
+      border: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .modeBtn {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .modeBtn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    /* Checkbox tasarımları */
+    .chk, .done {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 5;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .chk {
+      background: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .chk:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .done {
+      background: var(--success);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 5px 8px;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .btn-red {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+    }
+
+    .btn-red:hover {
+      background: var(--danger);
+      color: white;
+    }
+
+    .btn-green {
+      background: var(--success);
+      color: #000;
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .btn-green:hover {
+      background: #059669;
+      color: #fff;
+    }
+
+    .btn-blue {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      width: 100%;
+    }
+
+    .btn-blue:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Rozet Alanları */
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .badge {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .night {
+      --bg-main: #040711;
+      --bg-card: #0b101d;
+    }
+
+    /* ================= ADMIN PANELİ ================= */
+    .admin-panel {
+      background: rgba(30, 41, 59, 0.7);
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      margin-top: 15px;
+      border: 1px dashed var(--accent);
+      display: none;
+    }
+
+    .admin-panel input,
+    .admin-panel select {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 6px 0 16px 0;
+      background: rgba(15, 23, 42, 0.8);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      box-sizing: border-box;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .admin-panel input:focus,
+    .admin-panel select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .admin-card {
+      background: rgba(15, 23, 42, 0.4);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .file-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .controls {
+      display: none;
+    }
+
+    .admin-active .controls {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    /* ================= HARİTA (MAPS) GÖRÜNÜMLERİ ================= */
+    .map-container {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 10px 0;
+      border: 1px solid var(--border-color);
+    }
+
+    .map-header {
+      background: var(--accent);
+      color: black;
+      padding: 10px 14px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      display: block;
+    }
+
+    .map-btn {
+      display: block;
+      margin: 6px 0;
+      padding: 12px;
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      font-size: 13px;
+      transition: var(--transition);
+    }
+
+    .map-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* ================= ASİSTAN PANELİ BUTONLARI ================= */
+    .assistant-grid button {
+      background: rgba(16, 185, 129, 0.1) !important;
+      color: var(--success) !important;
+      border: 1px solid rgba(16, 185, 129, 0.2) !important;
+      font-weight: 700;
+    }
+
+    .assistant-grid button:hover {
+      background: var(--success) !important;
+      color: #000 !important;
+    }
+
+    /* ================= YENİ GELİŞMİŞ GALERİ MODAL ================= */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(3, 5, 11, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 95vw;
+      height: 85vh;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: contain;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 40px;
+      font-weight: 300;
+      cursor: pointer;
+      z-index: 10002;
+      transition: var(--transition);
+    }
+
+    .close:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 23, 42, 0.8);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10001;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent);
+      color: black;
+      border-color: var(--accent);
+    }
+
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+
+    .gallery-info {
+      position: absolute;
+      bottom: -55px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.6);
+      padding: 10px 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Responsive Kırılımları */
+    @media (max-width: 1024px) {
+      .items { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .admin-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .items { grid-template-columns: 1fr; padding: 15px; gap: 15px; }
+      .container { padding: 12px; }
+      .topbar h2 { font-size: 1.15rem; }
+      .nav-btn { width: 40px; height: 40px; font-size: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="topbar">
+      <h2>🚗 Rota PRO v2</h2>
+      <div>
+        <button class="modeBtn" onclick="toggleAdmin()">⚙️ Yönet</button>
+        <button class="modeBtn" onclick="toggleMode()">🌙</button>
+        <button class="modeBtn btn-red" onclick="clearAllData()">🗑️ Komple Sıfırla</button>
+        <button class="modeBtn" onclick="resetAndReloadJson()">🔄 JSON Yeniden Yükle</button>
+      </div>
+    </div>
+
+    <div class="progress-wrapper">
+      <span>Genel İlerleme</span>
+      <div class="bar">
+        <div class="fill" id="global"></div>
+      </div>
+    </div>
+    <div class="badges" id="badges"></div>
+  </header>
+
+  <div class="admin-panel" id="adminPanel">
+    <div class="file-actions">
+      <button class="btn-blue" onclick="exportJSON()">📥 JSON İndir</button>
+      <button class="btn-blue" onclick="document.getElementById('importFile').click()">📤 JSON Yükle</button>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+    </div>
+
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h3 style="margin-top:0; color:var(--accent);">➕ Otomatik Etap Ekle</h3>
+        <label>Etap Adı:</label>
+        <input type="text" id="newEtapName" placeholder="Örn: 1. Etap Ege">
+        <label>Google Maps Yol Tarifi Linki (Uzun URL):</label>
+        <input type="text" id="newEtapMap" placeholder="https://www.google.com/maps/dir/Durak1/Durak2/...">
+        <button class="btn-green" onclick="addEtap()">Etap ve Durakları Oluştur</button>
+      </div>
+
+      <div class="admin-card">
+        <h3 style="margin-top:0; color:var(--accent);">📍 Manuel Durak Ekle</h3>
+        <label>Hangi Etaba?</label>
+        <select id="etapSelect"></select>
+        <label>Durak Adı:</label>
+        <input type="text" id="newPlaceName" placeholder="Örn: Bademli Koyu">
+        <button class="btn-green" onclick="addPlace()">Durağı Ekle</button>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:15px;">* "Yönet" modundayken öğeleri silebilir veya sıralayabilirsiniz. Uzun yön tarifi linki eklerseniz duraklar otomatik çekilir.</p>
+  </div>
+
+  <div class="container" id="app"></div>
+
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">×</span>
+    <div class="gallery-container" onclick="event.stopPropagation()">
+      <div class="nav-btn prev-btn" onclick="changeImage(-1)">❮</div>
+      <img class="modal-content" id="modalImg" alt="Galeri Görseli">
+      <div class="nav-btn next-btn" onclick="changeImage(1)">❯</div>
+      <div class="gallery-info" id="galleryInfo">Yükleniyor...</div>
+    </div>
+  </div>
+
+  <script>
+    /* ================= DATA MANAGEMENT ================= */
+    let data = [];
+    let isAdmin = false;
+
+    let imageCache = JSON.parse(localStorage.getItem("pro_route_gallery_cache") || "{}");
+    let pendingFetches = new Set();
+
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
+    let currentActivePlace = "";
+
+    async function initApp() {
+      const localData = localStorage.getItem("pro_route_data");
+
+      if (localData) {
+        data = JSON.parse(localData);
+        startUI();
+      } else {
+        try {
+          const response = await fetch("pro_route_data.json");
+          if (response.ok) {
+            data = await response.json();
+            saveData();
+          } else {
+            loadFallbackData();
+          }
+        } catch (error) {
+          loadFallbackData();
+        }
+      }
+    }
+
+    function loadFallbackData() {
+      data = [
+        {
+          id: Date.now(),
+          name: "İç Anadolu Turu",
+          mapLinks: [{ title: "Ankara Gezi Rotası", url: "http://maps.google.com" }],
+          places: ["Ankara Kalesi", "Anıtkabir", "Efes Antik Kenti"]
+        }
+      ];
+      saveData();
+    }
+
+    function startUI() {
+      updateEtapSelect();
+      render();
+    }
+
+    function saveData() {
+      localStorage.setItem("pro_route_data", JSON.stringify(data));
+      updateEtapSelect();
+      render();
+    }
+
+    function exportJSON() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", "pro_route_data.json");
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    }
+
+    function importJSON(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const importedData = JSON.parse(e.target.result);
+          if (Array.isArray(importedData)) {
+            data = importedData;
+            saveData();
+            alert("Rota JSON dosyasından başarıyla yüklendi!");
+          }
+        } catch (err) {
+          alert("Hatalı JSON dosyası!");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    /* ================= AKILLI ÇOKLU FOTOĞRAF MOTORU ================= */
+ /* ================= AKILLI ÇOKLU FOTOĞRAF MOTORU ================= */
+    function getActualPlaceImages(placeName, imgElementId) {
+      if (imageCache[placeName] && imageCache[placeName].length > 0) {
+        return imageCache[placeName][0];
+      }
+
+      if (pendingFetches.has(placeName)) {
+        return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23151f32'/></svg>";
+      }
+
+      pendingFetches.add(placeName);
+      let cleanName = placeName.split(',')[0].split('/')[0].split('(')[0].trim();
+
+      const commonsUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(cleanName)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&format=json&origin=*`;
+
+      fetch(commonsUrl)
+        .then(res => res.json())
+        .then(json => {
+          let collectedImages = [];
+
+          if (json.query && json.query.pages) {
+            const pages = json.query.pages;
+            for (let pageId in pages) {
+              if (pages[pageId].imageinfo && pages[pageId].imageinfo.length > 0) {
+                collectedImages.push(pages[pageId].imageinfo[0].url);
+              }
+            }
+          }
+
+          if (collectedImages.length === 0) {
+            const trWikiUrl = `https://tr.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=1000&titles=${encodeURIComponent(cleanName)}&origin=*`;
+            return fetch(trWikiUrl)
+              .then(res => res.json())
+              .then(trJson => {
+                if (trJson.query && trJson.query.pages) {
+                  const trPages = trJson.query.pages;
+                  const trPageId = Object.keys(trPages)[0];
+                  if (trPageId !== "-1" && trPages[trPageId].thumbnail) {
+                    collectedImages.push(trPages[trPageId].thumbnail.source);
+                  }
+                }
+                return collectedImages;
+              });
+          }
+
+          return collectedImages;
+        })
+        .then(collectedImages => {
+          if (collectedImages.length === 0) {
+            collectedImages.push("https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg");
+          }
+
+          imageCache[placeName] = collectedImages;
+          localStorage.setItem("pro_route_image_cache", JSON.stringify(imageCache));
+
+          const el = document.getElementById(imgElementId);
+          if (el && collectedImages.length > 0) {
+            el.src = collectedImages[0];
+          }
+        })
+        .catch(() => {
+          let fallbackList = ["https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"];
+          imageCache[placeName] = fallbackList;
+          localStorage.setItem("pro_route_image_cache", JSON.stringify(imageCache));
+          const el = document.getElementById(imgElementId);
+          if (el) el.src = fallbackList[0];
+        });
+
+      return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23151f32'/></svg>";
+    }
+
+    /* ================= GALERİ MODAL KONTROLLERİ ================= */
+    function openModal(placeName) {
+      currentActivePlace = placeName;
+
+      if (imageCache[placeName] && imageCache[placeName].length > 0) {
+        currentGalleryImages = imageCache[placeName];
+      } else {
+        currentGalleryImages = ["https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"];
+      }
+
+      currentImageIndex = 0;
+
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+
+      updateModalImage();
+    }
+
+    function updateModalImage() {
+      const modalImg = document.getElementById("modalImg");
+      const infoText = document.getElementById("galleryInfo");
+
+      if (currentGalleryImages.length > 0) {
+        modalImg.src = currentGalleryImages[currentImageIndex];
+        infoText.innerText = `${currentActivePlace} — Görsel ${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+      }
+    }
+
+    function changeImage(step) {
+      currentImageIndex += step;
+      if (currentImageIndex >= currentGalleryImages.length) currentImageIndex = 0;
+      if (currentImageIndex < 0) currentImageIndex = currentGalleryImages.length - 1;
+      updateModalImage();
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = "";
+    }
+    /* ================= LOCAL STORAGE MANIPULATION ================= */
+    function clearAllData() {
+      if (confirm("DİKKAT: Tüm rota verileriniz, ilerlemeniz ve görsel önbelleğiniz tamamen silinecek. Emin misiniz?")) {
+        localStorage.clear();
+        alert("Tüm veriler temizlendi! Sayfa yeniden yüklenecek.");
+        localStorage.setItem("pro_route_data", JSON.stringify([]));
+        location.reload();
+      }
+    }
+
+    async function resetAndReloadJson() {
+      if (confirm("Mevcut rotalarınız ve değişiklikleriniz silinecek, orijinal JSON verileri yeniden yüklenecek. Emin misiniz?")) {
+        try {
+          localStorage.removeItem("pro_route_data");
+          const response = await fetch("pro_route_data.json");
+          
+          if (response.ok) {
+            data = await response.json();
+            saveData();
+            alert("Orijinal rota verileri başarıyla yeniden yüklendi!");
+          } else {
+            alert("pro_route_data.json dosyası sunucuda bulunamadı veya yüklenemedi!");
+            initApp();
+          }
+        } catch (error) {
+          console.error("Yeniden yükleme hatası:", error);
+          alert("Bir hata oluştu: " + error.message);
+          initApp();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (document.getElementById("imageModal").style.display === "flex") {
+        if (event.key === "Escape") closeModal();
+        if (event.key === "ArrowRight") changeImage(1);
+        if (event.key === "ArrowLeft") changeImage(-1);
+      }
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const modalZone = document.getElementById("imageModal");
+
+    modalZone.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, false);
+    modalZone.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) changeImage(1);
+      if (touchEndX > touchStartX + 50) changeImage(-1);
+    }
+
+    /* ================= MAPS URL PARSING LOGIC ================= */
+    function extractPlacesFromUrl(url) {
+      try {
+        if (!url.includes('/dir/')) return [];
+        let afterDir = url.split('/dir/')[1];
+        if (afterDir.includes('/@')) afterDir = afterDir.split('/@')[0];
+        if (afterDir.includes('/data=')) afterDir = afterDir.split('/data=')[0];
+        if (afterDir.includes('?')) afterDir = afterDir.split('?')[0];
+
+        const rawPlaces = afterDir.split('/');
+        const cleanPlaces = rawPlaces
+          .map(p => decodeURIComponent(p.replace(/\+/g, ' ')).trim())
+          .filter(p => p !== '' && !p.startsWith('data=') && !p.startsWith('am='));
+
+        return cleanPlaces.map(p => {
+          if (/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(p)) return "İsimsiz Nokta (Koordinat)";
+          return p;
+        });
+      } catch (e) {
+        return [];
+      }
+    }
+
+    /* ================= CRUD OPERATIONS ================= */
+    function toggleAdmin() {
+      isAdmin = !isAdmin;
+      document.getElementById("adminPanel").style.display = isAdmin ? "block" : "none";
+      document.body.classList.toggle("admin-active", isAdmin);
+    }
+
+    function addEtap() {
+      const name = document.getElementById("newEtapName").value.trim();
+      const mapUrl = document.getElementById("newEtapMap").value.trim();
+      if (!name) { alert("Etap adı boş olamaz!"); return; }
+
+      let autoPlaces = [];
+      if (mapUrl) autoPlaces = extractPlacesFromUrl(mapUrl);
+
+      const newEtap = {
+        id: Date.now(),
+        name: name,
+        mapLinks: mapUrl ? [{ title: name + " Haritası", url: mapUrl }] : [],
+        places: autoPlaces
+      };
+
+      data.push(newEtap);
+      document.getElementById("newEtapName").value = "";
+      document.getElementById("newEtapMap").value = "";
+      saveData();
+    }
+
+    function addPlace() {
+      const etapIndex = document.getElementById("etapSelect").value;
+      const placeName = document.getElementById("newPlaceName").value.trim();
+      if (etapIndex === "" || !placeName) return;
+
+      data[etapIndex].places.push(placeName);
+      document.getElementById("newPlaceName").value = "";
+      saveData();
+    }
+
+    function updateEtapSelect() {
+      const select = document.getElementById("etapSelect");
+      select.innerHTML = "";
+      data.forEach((e, i) => {
+        const opt = document.createElement("option");
+        opt.value = i; opt.innerText = e.name; select.appendChild(opt);
+      });
+    }
+
+    function moveEtap(index, direction) {
+      if (index + direction < 0 || index + direction >= data.length) return;
+      const temp = data[index]; data[index] = data[index + direction]; data[index + direction] = temp;
+      saveData();
+    }
+
+    function deleteEtap(index) {
+      if (confirm("Etabı silmek istediğine emin misin?")) { data.splice(index, 1); saveData(); }
+    }
+
+    function movePlace(etapIndex, placeIndex, direction) {
+      const places = data[etapIndex].places;
+      if (placeIndex + direction < 0 || placeIndex + direction >= places.length) return;
+      const temp = places[placeIndex]; places[placeIndex] = places[placeIndex + direction]; places[placeIndex + direction] = temp;
+      saveData();
+    }
+
+    function deletePlace(etapIndex, placeIndex) {
+      data[etapIndex].places.splice(placeIndex, 1);
+      saveData();
+    }
+
+    /* ================= STORAGE UTILS & PROGRESS ================= */
+    function key(e, p) { return "x_" + e + "_" + p; }
+    function get(k) { return localStorage.getItem(k) === "1"; }
+    function set(k, v) { localStorage.setItem(k, v ? "1" : "0"); }
+
+    function progress() {
+      let t = 0, d = 0;
+      data.forEach((e, i) => { e.places.forEach(p => { t++; if (get(key(i, p))) d++; }); });
+      return t ? Math.round((d / t) * 100) : 0;
+    }
+
+    function etapProgress(i) {
+      let t = 0, d = 0; if (!data[i] || !data[i].places) return 0;
+      data[i].places.forEach(p => { t++; if (get(key(i, p))) d++; });
+      return t ? Math.round((d / t) * 100) : 0;
+    }
+
+    /* ================= UI RENDER ================= */
+    function render() {
+      const app = document.getElementById("app");
+      app.innerHTML = "";
+
+      data.forEach((e, i) => {
+        const box = document.createElement("div");
+        box.className = "etap";
+
+        box.innerHTML = `
+          <div class="etap-header">
+            <h2 onclick="toggleEtap(this)">📂 ${e.name} - %${etapProgress(i)}</h2>
+            <div class="controls">
+              <button class="action-btn" onclick="moveEtap(${i}, -1)">⬆️</button>
+              <button class="action-btn" onclick="moveEtap(${i}, 1)">⬇️</button>
+              <button class="action-btn btn-red" onclick="deleteEtap(${i})">❌</button>
+            </div>
+          </div>
+          <div class="etap-btns" style="padding: 15px 20px 0 20px; display: none; flex-direction: column; gap: 10px;"></div>
+          <div class="items"></div>
+        `;
+
+        const etapBtns = box.querySelector(".etap-btns");
+        const items = box.querySelector(".items");
+
+        // 1. Harita Linkleri
+        if (e.mapLinks && e.mapLinks.length > 0) {
+          e.mapLinks.forEach(link => {
+            if (link.url.includes("embed")) {
+              const mapDiv = document.createElement("div");
+              mapDiv.className = "map-container";
+              mapDiv.innerHTML = `<div class="map-header">🗺️ ${link.title}</div><iframe src="${link.url}" allowfullscreen="" loading="lazy"></iframe>`;
+              etapBtns.appendChild(mapDiv);
+            } else {
+              const btnUrl = document.createElement("a");
+              btnUrl.className = "map-btn"; 
+              btnUrl.href = link.url; 
+              btnUrl.target = "_blank";
+              btnUrl.innerText = `🗺️ ${link.title} (Haritada Aç)`;
+              etapBtns.appendChild(btnUrl);
+            }
+          });
+        }
+
+        // 2. ASİSTAN PANELİ
+        const assistantContainer = document.createElement("div");
+        assistantContainer.className = "assistant-grid";
+        assistantContainer.style.cssText = "margin:5px 0; display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:8px;";
+
+        const services = [
+          { label: "Otel", query: "oteller" },
+          { label: "Eczane", query: "eczaneler" },
+          { label: "Market", query: "marketler" },
+          { label: "Benzinlik", query: "akaryakıt istasyonu" },
+          { label: "Kafe", query: "kafeler" },
+          { label: "Restoran", query: "restoranlar" },
+          { label: "Hastane", query: "hastaneler" },
+          { label: "Kamp", query: "kamp alanları" },
+        ];
+
+        services.forEach(s => {
+          const sBtn = document.createElement("button");
+          sBtn.className = "action-btn";
+          sBtn.style.padding = "10px";
+          sBtn.innerText = `🔍 ${s.label}`;
+          sBtn.onclick = () => {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                const query = encodeURIComponent(s.query);
+                // KANKA NOT: Orijinal link yapısını bozmadan tam senkron korudum.
+                const url = `https://www.google.com/maps/search/${query}/@${lat},${lng},14z`;
+                window.open(url, "_blank");
+              },
+              () => {
+                alert("Konum alınamadı.");
+              }
+            );
+          };
+          assistantContainer.appendChild(sBtn);
+        });
+        etapBtns.appendChild(assistantContainer);
+
+        if (etapBtns.children.length === 0) {
+          etapBtns.style.padding = "0";
+        }
+
+        // 3. Duraklar
+        e.places.forEach((p, pIndex) => {
+          const k = key(i, p);
+          const div = document.createElement("div");
+          div.className = "item";
+          const imgId = `img_${i}_${pIndex}`;
+          const imgUrl = (imageCache[p] && imageCache[p].length > 0) ? imageCache[p][0] : getActualPlaceImages(p, imgId);
+
+          // KANKA NOT: İstediğin gibi adresi ilk virgüle göre parçalayıp kısa ismi aldık
+          const shortName = p.includes(',') ? p.split(',')[0].trim() : p;
+
+          div.innerHTML = `
+            <img id="${imgId}" src="${imgUrl}" alt="${shortName}" onclick="openModal('${p.replace(/'/g, "\\'")}')" />
+            <div style="flex:1; display:flex; flex-direction:column; justify-content:space-between; gap:8px;">
+              <b>${shortName}</b>
+              <div class="controls">
+                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, -1)">⬆️</button>
+                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, 1)">⬇️</button>
+                <button class="action-btn btn-red" onclick="deletePlace(${i}, ${pIndex})">❌</button>
+              </div>
+            </div>
+            <button class="${get(k) ? 'done' : 'chk'}" onclick="toggleCheck('${k}')">
+              ${get(k) ? "✔" : "⬜"}
+            </button>
+          `;
+          items.appendChild(div);
+        });
+
+        app.appendChild(box);
+      });
+
+      document.getElementById("global").style.width = progress() + "%";
+      renderBadges();
+    }
+
+    function renderBadges() {
+      const b = document.getElementById("badges"); b.innerHTML = "";
+      data.forEach((e, i) => {
+        if (etapProgress(i) === 100 && e.places.length > 0) {
+          const s = document.createElement("div"); s.className = "badge"; s.innerText = "🏆 " + e.name + " bitti"; b.appendChild(s);
+        }
+      });
+      if (progress() === 100 && data.length > 0) {
+        const s = document.createElement("div"); s.className = "badge"; s.innerText = "👑 TÜRKİYE MASTER"; b.appendChild(s);
+      }
+    }
+
+    function toggleCheck(k) { set(k, !get(k)); render(); }
+
+    /* 🌟 TOGGLE ETAP: Hem .etap-btns hem de .items alanlarını koruyan fonksiyon */
+    function toggleEtap(el) {
+      const etapBox = el.closest('.etap');
+      const btns = etapBox.querySelector('.etap-btns');
+      const items = etapBox.querySelector('.items');
+
+      if (items.style.display === "none" || !items.style.display) {
+        items.style.display = "grid"; 
+        if (btns) btns.style.display = "flex";
+      } else {
+        items.style.display = "none";  
+        if (btns) btns.style.display = "none";
+      }
+    }
+    
+    function toggleMode() { document.body.classList.toggle("night"); }
+
+    /* ================= BAŞLAT ================= */
+    initApp();
+  </script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register(URL.createObjectURL(new Blob([`
+        self.addEventListener('install',e=>self.skipWaiting());
+        self.addEventListener('fetch',()=>{});
+      `], { type: "text/javascript" })));
+    }
+  </script>
+
+</body>
+</html>
