@@ -415,6 +415,8 @@
       <div>
         <button class="modeBtn" onclick="toggleAdmin()">⚙️ Yönet</button>
         <button class="modeBtn" onclick="toggleMode()">🌙</button>
+        <button class="modeBtn" onclick="clearAllData()">🗑️ Komple Sıfırla</button>
+<button class="modeBtn" onclick="resetAndReloadJson()">🔄 JSON Yeniden Yükle</button>
       </div>
     </div>
 
@@ -662,7 +664,43 @@
       document.getElementById("imageModal").style.display = "none";
       document.body.style.overflow = "";
     }
+/* ================= LOCAL STORAGE MANIPULATION ================= */
+    // 1. Komple Sıfırla: LocalStorage'daki her şeyi temizler ve uygulamayı sıfırdan başlatır
+    function clearAllData() {
+      if (confirm("DİKKAT: Tüm rota verileriniz, ilerlemeniz ve görsel önbelleğiniz tamamen silinecek. Emin misiniz?")) {
+        localStorage.clear();
+        alert("Tüm veriler temizlendi! Sayfa yeniden yüklenecek.");
+       // 2. push() fonksiyonunun patlamaması için BOŞ BİR DİZİ (ARRAY) set et
+    localStorage.setItem("pro_route_data", JSON.stringify([]));
+        location.reload();
+      }
+    }
 
+    // 2. JSON Yeniden Yükle: Rota verilerini siler ve orijinal pro_route_data.json dosyasını tekrar çeker
+    async function resetAndReloadJson() {
+      if (confirm("Mevcut rotalarınız ve değişiklikleriniz silinecek, orijinal JSON verileri yeniden yüklenecek. Emin misiniz?")) {
+        try {
+          // Sadece rota verisini temizliyoruz (İstersen görsel cache'i kalsın diye sadece bunu sildim)
+          localStorage.removeItem("pro_route_data");
+          
+          // Orijinal dosyaya istek atıyoruz
+          const response = await fetch("pro_route_data.json");
+          
+          if (response.ok) {
+            data = await response.json();
+            saveData(); // İçerisinde localStorage.setItem, updateEtapSelect ve render barındırıyor.
+            alert("Orijinal rota verileri başarıyla yeniden yüklendi!");
+          } else {
+            alert("pro_route_data.json dosyası sunucuda bulunamadı veya yüklenemedi!");
+            initApp(); // Hata durumunda uygulamayı güvenli moda (fallback) düşürmesi için tetikliyoruz
+          }
+        } catch (error) {
+          console.error("Yeniden yükleme hatası:", error);
+          alert("Bir hata oluştu: " + error.message);
+          initApp();
+        }
+      }
+    }
     document.addEventListener('keydown', function (event) {
       if (document.getElementById("imageModal").style.display === "flex") {
         if (event.key === "Escape") closeModal();
