@@ -9,245 +9,368 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
+    /* ================= MODERN PREMIUM RENK PALETİ VE DEĞİŞKENLER ================= */
+    :root {
+      --bg-main: #090d16;
+      --bg-card: #131c2e;
+      --bg-header: rgba(17, 24, 39, 0.85);
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --success: #10b981;
+      --danger: #ef4444;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.06);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     /* ================= GENEL AYARLAR ================= */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: white;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
       -webkit-tap-highlight-color: transparent;
+      line-height: 1.5;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: #111827;
-      padding: 15px;
-      z-index: 10;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      background: var(--bg-header);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 20px;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 15px;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #f59e0b, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .topbar div {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     /* ================= İLERLEME ÇUBUĞU ================= */
+    .progress-wrapper {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
     .bar {
-      height: 10px;
-      background: #334155;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
       overflow: hidden;
-      margin-top: 8px;
     }
 
     .fill {
       height: 10px;
-      background: #22c55e;
+      background: linear-gradient(90deg, #10b981, #059669);
       width: 0%;
-      transition: 0.3s;
+      transition: var(--transition);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
     }
 
     /* ================= LİSTE VE ETAPLAR ================= */
     .container {
-      padding: 10px;
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .etap {
-      margin-bottom: 15px;
-      background: #1e293b;
-      border-radius: 10px;
+      margin-bottom: 20px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .etap:hover {
+      border-color: rgba(245, 158, 11, 0.2);
     }
 
     .etap-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #0f172a;
-      padding-right: 15px;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 6px 16px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .etap h2 {
       margin: 0;
-      padding: 15px;
+      padding: 14px 0;
+      font-size: 1.15rem;
+      font-weight: 700;
       cursor: pointer;
       flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
     }
 
-    /* 🌟 BÜYÜK DEĞİŞİKLİK: !important kaldırıldı, böylece JS ile none/grid yapılabilecek */
     .items {
       display: none; 
-      grid-template-columns: repeat(3, 1fr); /* Yan yana tam 3 tane */
-      gap: 15px;
-      padding: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
     }
 
     .item {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 8px;
-      background: #0b1220;
-      padding: 10px;
-      border-radius: 8px;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.5);
+      padding: 12px;
+      border-radius: var(--radius-md);
       position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
     }
 
-    /* Checkbox'ı resmin üzerine alacak yeni sınıf */
-    .chk {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.2);
-      z-index: 5;
+    .item:hover {
+      transform: translateY(-2px);
+      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
     .item img {
       width: 100%;
-      height: 140px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       cursor: zoom-in;
       background: #151f32;
+      transition: var(--transition);
     }
 
     .item img:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      transform: scale(1.02);
     }
 
-    small {
-      opacity: 0.7;
+    .item b {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
     }
 
-    /* ================= BUTONLAR VE ROZETLER ================= */
+    /* ================= BUTONLAR VE DEĞİŞKEN DURUMLAR ================= */
     button {
       border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
     }
 
-    .chk {
-      background: #bdbdbd;
-      color: white;
+    button:active {
+      transform: scale(0.96);
     }
 
-    .done {
+    .modeBtn {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .modeBtn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    /* Checkbox tasarımları */
+    .chk, .done {
       position: absolute;
-      background: #22c55e;
-      top: 15px;
-      right: 15px;
-      width: 32px;
-      height: 32px;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 5;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .chk {
+      background: rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .chk:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .done {
+      background: var(--success);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
     }
 
     .action-btn {
-      background: #475569;
-      color: white;
-      font-size: 12px;
-      margin-left: 4px;
-      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 5px 8px;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
     }
 
     .btn-red {
-      background: #ef4444;
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+    }
+
+    .btn-red:hover {
+      background: var(--danger);
       color: white;
     }
 
+    .btn-green {
+      background: var(--success);
+      color: #000;
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .btn-green:hover {
+      background: #059669;
+      color: #fff;
+    }
+
+    .btn-blue {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      width: 100%;
+    }
+
+    .btn-blue:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Rozet Alanları */
     .badges {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .badge {
-      background: #f59e0b;
-      color: black;
-      padding: 5px 8px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .modeBtn {
-      background: #f59e0b;
-      color: black;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid rgba(245, 158, 11, 0.3);
     }
 
     .night {
-      background: #050814 !important;
+      --bg-main: #040711;
+      --bg-card: #0b101d;
     }
 
     /* ================= ADMIN PANELİ ================= */
     .admin-panel {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 8px;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 20px;
+      border-radius: var(--radius-lg);
       margin-top: 15px;
-      border: 1px dashed #f59e0b;
+      border: 1px dashed var(--accent);
       display: none;
     }
 
     .admin-panel input,
     .admin-panel select {
       width: 100%;
-      padding: 8px;
-      margin: 5px 0 15px 0;
-      background: #0f172a;
+      padding: 10px 12px;
+      margin: 6px 0 16px 0;
+      background: rgba(15, 23, 42, 0.8);
       color: white;
-      border: 1px solid #334155;
-      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
       box-sizing: border-box;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .admin-panel input:focus,
+    .admin-panel select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
     }
 
     .admin-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 20px;
     }
 
     .admin-card {
-      background: #0b1220;
-      padding: 10px;
-      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
     }
 
     .file-actions {
       display: flex;
       gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .btn-green {
-      background: #22c55e;
-      color: black;
-      width: 100%;
-    }
-
-    .btn-blue {
-      background: #3b82f6;
-      color: white;
-      width: 100%;
+      margin-bottom: 16px;
     }
 
     .controls {
@@ -261,19 +384,19 @@
 
     /* ================= HARİTA (MAPS) GÖRÜNÜMLERİ ================= */
     .map-container {
-      background: #0f172a;
-      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: var(--radius-md);
       overflow: hidden;
       margin: 10px 0;
-      border: 1px solid #334155;
+      border: 1px solid var(--border-color);
     }
 
     .map-header {
-      background: #f59e0b;
+      background: var(--accent);
       color: black;
-      padding: 8px 12px;
-      font-weight: bold;
-      font-size: 14px;
+      padding: 10px 14px;
+      font-weight: 700;
+      font-size: 13px;
     }
 
     .map-container iframe {
@@ -285,14 +408,35 @@
 
     .map-btn {
       display: block;
-      margin: 8px 0;
-      padding: 10px 12px;
-      background: #f59e0b;
-      color: black;
+      margin: 6px 0;
+      padding: 12px;
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
+      font-weight: 700;
+      border-radius: var(--radius-md);
       text-align: center;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      font-size: 13px;
+      transition: var(--transition);
+    }
+
+    .map-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* ================= ASİSTAN PANELİ BUTONLARI ================= */
+    .assistant-grid button {
+      background: rgba(16, 185, 129, 0.1) !important;
+      color: var(--success) !important;
+      border: 1px solid rgba(16, 185, 129, 0.2) !important;
+      font-weight: 700;
+    }
+
+    .assistant-grid button:hover {
+      background: var(--success) !important;
+      color: #000 !important;
     }
 
     /* ================= YENİ GELİŞMİŞ GALERİ MODAL ================= */
@@ -304,8 +448,9 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(3, 5, 11, 0.97);
-      backdrop-filter: blur(15px);
+      background-color: rgba(3, 5, 11, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       justify-content: center;
       align-items: center;
       overflow: hidden;
@@ -314,7 +459,7 @@
     .gallery-container {
       position: relative;
       width: 95vw;
-      height: 80vh;
+      height: 85vh;
       max-width: 1200px;
       display: flex;
       justify-content: center;
@@ -324,7 +469,7 @@
     .modal-content {
       width: 100%;
       height: 100%;
-      border-radius: 12px;
+      border-radius: var(--radius-lg);
       object-fit: contain;
       user-select: none;
       transition: transform 0.2s ease;
@@ -332,18 +477,18 @@
 
     .close {
       position: absolute;
-      top: 15px;
-      right: 25px;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 45px;
-      font-weight: bold;
+      top: 20px;
+      right: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 40px;
+      font-weight: 300;
       cursor: pointer;
       z-index: 10002;
-      transition: color 0.2s, transform 0.2s;
+      transition: var(--transition);
     }
 
     .close:hover {
-      color: #f59e0b;
+      color: var(--accent);
       transform: scale(1.1);
     }
 
@@ -351,59 +496,57 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.8);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 30px;
-      width: 55px;
-      height: 55px;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       z-index: 10001;
-      transition: background 0.2s, color 0.2s;
+      transition: var(--transition);
       user-select: none;
     }
 
     .nav-btn:hover {
-      background: #f59e0b;
+      background: var(--accent);
       color: black;
+      border-color: var(--accent);
     }
 
-    .prev-btn {
-      left: 15px;
-    }
-
-    .next-btn {
-      right: 15px;
-    }
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
 
     .gallery-info {
       position: absolute;
-      bottom: -45px;
+      bottom: -55px;
       left: 0;
       width: 100%;
       text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
-      background: rgba(15, 23, 42, 0.8);
-      padding: 8px 0;
-      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.6);
+      padding: 10px 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
     }
-    @media (max-width: 1024px) {
-  .items {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-/* mobil */
-@media (max-width: 768px) {
-  .items {
-    grid-template-columns: 1fr;
-  }
-}
+    /* Responsive Kırılımları */
+    @media (max-width: 1024px) {
+      .items { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .admin-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .items { grid-template-columns: 1fr; padding: 15px; gap: 15px; }
+      .container { padding: 12px; }
+      .topbar h2 { font-size: 1.15rem; }
+      .nav-btn { width: 40px; height: 40px; font-size: 18px; }
+    }
   </style>
 </head>
 
@@ -415,46 +558,48 @@
       <div>
         <button class="modeBtn" onclick="toggleAdmin()">⚙️ Yönet</button>
         <button class="modeBtn" onclick="toggleMode()">🌙</button>
-        <button class="modeBtn" onclick="clearAllData()">🗑️ Komple Sıfırla</button>
-<button class="modeBtn" onclick="resetAndReloadJson()">🔄 JSON Yeniden Yükle</button>
+        <button class="modeBtn btn-red" onclick="clearAllData()">🗑️ Komple Sıfırla</button>
+        <button class="modeBtn" onclick="resetAndReloadJson()">🔄 JSON Yeniden Yükle</button>
       </div>
     </div>
 
-    <div class="admin-panel" id="adminPanel">
-      <div class="file-actions">
-        <button class="btn-blue" onclick="exportJSON()">📥 JSON İndir</button>
-        <button class="btn-blue" onclick="document.getElementById('importFile').click()">📤 JSON Yükle</button>
-        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+    <div class="progress-wrapper">
+      <span>Genel İlerleme</span>
+      <div class="bar">
+        <div class="fill" id="global"></div>
       </div>
-
-      <div class="admin-grid">
-        <div class="admin-card">
-          <h3 style="margin-top:0; color:#f59e0b;">➕ Otomatik Etap Ekle</h3>
-          <label>Etap Adı:</label>
-          <input type="text" id="newEtapName" placeholder="Örn: 1. Etap Ege">
-          <label>Google Maps Yol Tarifi Linki (Uzun URL):</label>
-          <input type="text" id="newEtapMap" placeholder="https://www.google.com/maps/dir/Durak1/Durak2/...">
-          <button class="btn-green" onclick="addEtap()">Etap ve Durakları Oluştur</button>
-        </div>
-
-        <div class="admin-card">
-          <h3 style="margin-top:0; color:#f59e0b;">📍 Manuel Durak Ekle</h3>
-          <label>Hangi Etaba?</label>
-          <select id="etapSelect"></select>
-          <label>Durak Adı:</label>
-          <input type="text" id="newPlaceName" placeholder="Örn: Bademli Koyu">
-          <button class="btn-green" onclick="addPlace()">Durağı Ekle</button>
-        </div>
-      </div>
-      <p style="font-size:12px; color:#94a3b8; margin-top:15px;">* "Yönet" modundayken öğeleri silebilir veya sıralayabilirsiniz. Uzun yön tarifi linki eklerseniz duraklar otomatik çekilir.</p>
-    </div>
-
-    Genel İlerleme
-    <div class="bar">
-      <div class="fill" id="global"></div>
     </div>
     <div class="badges" id="badges"></div>
   </header>
+
+  <div class="admin-panel" id="adminPanel">
+    <div class="file-actions">
+      <button class="btn-blue" onclick="exportJSON()">📥 JSON İndir</button>
+      <button class="btn-blue" onclick="document.getElementById('importFile').click()">📤 JSON Yükle</button>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)">
+    </div>
+
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h3 style="margin-top:0; color:var(--accent);">➕ Otomatik Etap Ekle</h3>
+        <label>Etap Adı:</label>
+        <input type="text" id="newEtapName" placeholder="Örn: 1. Etap Ege">
+        <label>Google Maps Yol Tarifi Linki (Uzun URL):</label>
+        <input type="text" id="newEtapMap" placeholder="https://www.google.com/maps/dir/Durak1/Durak2/...">
+        <button class="btn-green" onclick="addEtap()">Etap ve Durakları Oluştur</button>
+      </div>
+
+      <div class="admin-card">
+        <h3 style="margin-top:0; color:var(--accent);">📍 Manuel Durak Ekle</h3>
+        <label>Hangi Etaba?</label>
+        <select id="etapSelect"></select>
+        <label>Durak Adı:</label>
+        <input type="text" id="newPlaceName" placeholder="Örn: Bademli Koyu">
+        <button class="btn-green" onclick="addPlace()">Durağı Ekle</button>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--text-muted); margin-top:15px;">* "Yönet" modundayken öğeleri silebilir veya sıralayabilirsiniz. Uzun yön tarifi linki eklerseniz duraklar otomatik çekilir.</p>
+  </div>
 
   <div class="container" id="app"></div>
 
@@ -554,6 +699,7 @@
     }
 
     /* ================= AKILLI ÇOKLU FOTOĞRAF MOTORU ================= */
+ /* ================= AKILLI ÇOKLU FOTOĞRAF MOTORU ================= */
     function getActualPlaceImages(placeName, imgElementId) {
       if (imageCache[placeName] && imageCache[placeName].length > 0) {
         return imageCache[placeName][0];
@@ -664,35 +810,29 @@
       document.getElementById("imageModal").style.display = "none";
       document.body.style.overflow = "";
     }
-/* ================= LOCAL STORAGE MANIPULATION ================= */
-    // 1. Komple Sıfırla: LocalStorage'daki her şeyi temizler ve uygulamayı sıfırdan başlatır
+    /* ================= LOCAL STORAGE MANIPULATION ================= */
     function clearAllData() {
       if (confirm("DİKKAT: Tüm rota verileriniz, ilerlemeniz ve görsel önbelleğiniz tamamen silinecek. Emin misiniz?")) {
         localStorage.clear();
         alert("Tüm veriler temizlendi! Sayfa yeniden yüklenecek.");
-       // 2. push() fonksiyonunun patlamaması için BOŞ BİR DİZİ (ARRAY) set et
-    localStorage.setItem("pro_route_data", JSON.stringify([]));
+        localStorage.setItem("pro_route_data", JSON.stringify([]));
         location.reload();
       }
     }
 
-    // 2. JSON Yeniden Yükle: Rota verilerini siler ve orijinal pro_route_data.json dosyasını tekrar çeker
     async function resetAndReloadJson() {
       if (confirm("Mevcut rotalarınız ve değişiklikleriniz silinecek, orijinal JSON verileri yeniden yüklenecek. Emin misiniz?")) {
         try {
-          // Sadece rota verisini temizliyoruz (İstersen görsel cache'i kalsın diye sadece bunu sildim)
           localStorage.removeItem("pro_route_data");
-          
-          // Orijinal dosyaya istek atıyoruz
           const response = await fetch("pro_route_data.json");
           
           if (response.ok) {
             data = await response.json();
-            saveData(); // İçerisinde localStorage.setItem, updateEtapSelect ve render barındırıyor.
+            saveData();
             alert("Orijinal rota verileri başarıyla yeniden yüklendi!");
           } else {
             alert("pro_route_data.json dosyası sunucuda bulunamadı veya yüklenemedi!");
-            initApp(); // Hata durumunda uygulamayı güvenli moda (fallback) düşürmesi için tetikliyoruz
+            initApp();
           }
         } catch (error) {
           console.error("Yeniden yükleme hatası:", error);
@@ -701,6 +841,7 @@
         }
       }
     }
+
     document.addEventListener('keydown', function (event) {
       if (document.getElementById("imageModal").style.display === "flex") {
         if (event.key === "Escape") closeModal();
@@ -834,129 +975,128 @@
     }
 
     /* ================= UI RENDER ================= */
-/* ================= UI RENDER ================= */
-function render() {
-  const app = document.getElementById("app");
-  app.innerHTML = "";
+    function render() {
+      const app = document.getElementById("app");
+      app.innerHTML = "";
 
-  data.forEach((e, i) => {
-    const box = document.createElement("div");
-    box.className = "etap";
+      data.forEach((e, i) => {
+        const box = document.createElement("div");
+        box.className = "etap";
 
-    box.innerHTML = `
-      <div class="etap-header">
-        <h2 onclick="toggleEtap(this)">${e.name} - %${etapProgress(i)}</h2>
-        <div class="controls">
-          <button class="action-btn" onclick="moveEtap(${i}, -1)">⬆️</button>
-          <button class="action-btn" onclick="moveEtap(${i}, 1)">⬇️</button>
-          <button class="action-btn btn-red" onclick="deleteEtap(${i})">❌</button>
-        </div>
-      </div>
-      <div class="etap-btns" style=" padding: 10px 15px 0 15px; display: none; flex-direction: column; gap: 10px;"></div>
-      <div class="items"></div>
-    `;
-
-    const etapBtns = box.querySelector(".etap-btns");
-    const items = box.querySelector(".items");
-
-    // 1. Harita Linkleri
-    if (e.mapLinks && e.mapLinks.length > 0) {
-      e.mapLinks.forEach(link => {
-        if (link.url.includes("embed")) {
-          const mapDiv = document.createElement("div");
-          mapDiv.className = "map-container";
-          mapDiv.innerHTML = `<div class="map-header">🗺️ ${link.title}</div><iframe src="${link.url}" allowfullscreen="" loading="lazy"></iframe>`;
-          etapBtns.appendChild(mapDiv);
-        } else {
-          const btnUrl = document.createElement("a");
-          btnUrl.className = "map-btn"; 
-          btnUrl.href = link.url; 
-          btnUrl.target = "_blank";
-          btnUrl.innerText = `🗺️ ${link.title} (Haritada Aç)`;
-          etapBtns.appendChild(btnUrl);
-        }
-      });
-    }
-
-    // 2. ASİSTAN PANELİ
-    const assistantContainer = document.createElement("div");
-    assistantContainer.style.cssText = "margin:5px 0; display:grid; grid-template-columns:1fr 1fr; gap:8px;";
-
-    const services = [
-      { label: "Otel", query: "oteller" },
-      { label: "Eczane", query: "eczaneler" },
-      { label: "Market", query: "marketler" },
-      { label: "Benzinlik", query: "akaryakıt istasyonu" },
-      { label: "Kafe", query: "kafeler" },
-      { label: "Restoran", query: "restoranlar" },
-      { label: "Hastane", query: "hastaneler" },
-      { label: "Kamp", query: "kamp alanları" },
-    ];
-
-    services.forEach(s => {
-      const sBtn = document.createElement("button");
-      sBtn.className = "action-btn";
-      sBtn.style.padding = "10px";
-      sBtn.style.background = "#22c55e";
-      sBtn.style.color = "black";
-      sBtn.innerText = `🔍 ${s.label} Ara`;
-      sBtn.onclick = () => {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            const lat = pos.coords.latitude;
-            const lng = pos.coords.longitude;
-            const query = encodeURIComponent(s.query);
-            // KANKA NOT: Eski googleusercontent linkini, çalışan resmi Google Maps arama linkine çevirdim.
-            const url = `https://www.google.com/maps/search/${query}/@${lat},${lng},14z`;
-            window.open(url, "_blank");
-          },
-          () => {
-            alert("Konum alınamadı.");
-          }
-        );
-      };
-      assistantContainer.appendChild(sBtn);
-    });
-    etapBtns.appendChild(assistantContainer);
-
-    if (etapBtns.children.length === 0) {
-      etapBtns.style.padding = "0";
-    }
-
-    // 3. Duraklar
-    e.places.forEach((p, pIndex) => {
-      const k = key(i, p);
-      const div = document.createElement("div");
-      div.className = "item";
-      const imgId = `img_${i}_${pIndex}`;
-      const imgUrl = (imageCache[p] && imageCache[p].length > 0) ? imageCache[p][0] : getActualPlaceImages(p, imgId);
-
-      // KANKA NOT: İstediğin gibi adresi ilk virgüle göre parçalayıp kısa ismi aldık
-      const shortName = p.includes(',') ? p.split(',')[0].trim() : p;
-
-      div.innerHTML = `
-        <img id="${imgId}" src="${imgUrl}" alt="${shortName}" onclick="openModal('${p.replace(/'/g, "\\'")}')" />
-        <div style="flex:1">
-          <b>${shortName}</b><br/>
-          <div class="controls" style="margin-top:5px;">
-            <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, -1)">⬆️</button>
-            <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, 1)">⬇️</button>
-            <button class="action-btn btn-red" onclick="deletePlace(${i}, ${pIndex})">❌</button>
+        box.innerHTML = `
+          <div class="etap-header">
+            <h2 onclick="toggleEtap(this)">📂 ${e.name} - %${etapProgress(i)}</h2>
+            <div class="controls">
+              <button class="action-btn" onclick="moveEtap(${i}, -1)">⬆️</button>
+              <button class="action-btn" onclick="moveEtap(${i}, 1)">⬇️</button>
+              <button class="action-btn btn-red" onclick="deleteEtap(${i})">❌</button>
+            </div>
           </div>
-        </div>
-        <button class="${get(k) ? 'done' : 'chk'}" onclick="toggleCheck('${k}')">
-          ${get(k) ? "✔" : "⬜"}
-        </button>
-      `;
-      items.appendChild(div);
-    });
+          <div class="etap-btns" style="padding: 15px 20px 0 20px; display: none; flex-direction: column; gap: 10px;"></div>
+          <div class="items"></div>
+        `;
 
-    app.appendChild(box);
-  });
+        const etapBtns = box.querySelector(".etap-btns");
+        const items = box.querySelector(".items");
 
-  document.getElementById("global").style.width = progress() + "%";
-  renderBadges();
-}
+        // 1. Harita Linkleri
+        if (e.mapLinks && e.mapLinks.length > 0) {
+          e.mapLinks.forEach(link => {
+            if (link.url.includes("embed")) {
+              const mapDiv = document.createElement("div");
+              mapDiv.className = "map-container";
+              mapDiv.innerHTML = `<div class="map-header">🗺️ ${link.title}</div><iframe src="${link.url}" allowfullscreen="" loading="lazy"></iframe>`;
+              etapBtns.appendChild(mapDiv);
+            } else {
+              const btnUrl = document.createElement("a");
+              btnUrl.className = "map-btn"; 
+              btnUrl.href = link.url; 
+              btnUrl.target = "_blank";
+              btnUrl.innerText = `🗺️ ${link.title} (Haritada Aç)`;
+              etapBtns.appendChild(btnUrl);
+            }
+          });
+        }
+
+        // 2. ASİSTAN PANELİ
+        const assistantContainer = document.createElement("div");
+        assistantContainer.className = "assistant-grid";
+        assistantContainer.style.cssText = "margin:5px 0; display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:8px;";
+
+        const services = [
+          { label: "Otel", query: "oteller" },
+          { label: "Eczane", query: "eczaneler" },
+          { label: "Market", query: "marketler" },
+          { label: "Benzinlik", query: "akaryakıt istasyonu" },
+          { label: "Kafe", query: "kafeler" },
+          { label: "Restoran", query: "restoranlar" },
+          { label: "Hastane", query: "hastaneler" },
+          { label: "Kamp", query: "kamp alanları" },
+        ];
+
+        services.forEach(s => {
+          const sBtn = document.createElement("button");
+          sBtn.className = "action-btn";
+          sBtn.style.padding = "10px";
+          sBtn.innerText = `🔍 ${s.label}`;
+          sBtn.onclick = () => {
+            navigator.geolocation.getCurrentPosition(
+              (pos) => {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                const query = encodeURIComponent(s.query);
+                // KANKA NOT: Orijinal link yapısını bozmadan tam senkron korudum.
+                const url = `https://www.google.com/maps/search/${query}/@${lat},${lng},14z`;
+                window.open(url, "_blank");
+              },
+              () => {
+                alert("Konum alınamadı.");
+              }
+            );
+          };
+          assistantContainer.appendChild(sBtn);
+        });
+        etapBtns.appendChild(assistantContainer);
+
+        if (etapBtns.children.length === 0) {
+          etapBtns.style.padding = "0";
+        }
+
+        // 3. Duraklar
+        e.places.forEach((p, pIndex) => {
+          const k = key(i, p);
+          const div = document.createElement("div");
+          div.className = "item";
+          const imgId = `img_${i}_${pIndex}`;
+          const imgUrl = (imageCache[p] && imageCache[p].length > 0) ? imageCache[p][0] : getActualPlaceImages(p, imgId);
+
+          // KANKA NOT: İstediğin gibi adresi ilk virgüle göre parçalayıp kısa ismi aldık
+          const shortName = p.includes(',') ? p.split(',')[0].trim() : p;
+
+          div.innerHTML = `
+            <img id="${imgId}" src="${imgUrl}" alt="${shortName}" onclick="openModal('${p.replace(/'/g, "\\'")}')" />
+            <div style="flex:1; display:flex; flex-direction:column; justify-content:space-between; gap:8px;">
+              <b>${shortName}</b>
+              <div class="controls">
+                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, -1)">⬆️</button>
+                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, 1)">⬇️</button>
+                <button class="action-btn btn-red" onclick="deletePlace(${i}, ${pIndex})">❌</button>
+              </div>
+            </div>
+            <button class="${get(k) ? 'done' : 'chk'}" onclick="toggleCheck('${k}')">
+              ${get(k) ? "✔" : "⬜"}
+            </button>
+          `;
+          items.appendChild(div);
+        });
+
+        app.appendChild(box);
+      });
+
+      document.getElementById("global").style.width = progress() + "%";
+      renderBadges();
+    }
+
     function renderBadges() {
       const b = document.getElementById("badges"); b.innerHTML = "";
       data.forEach((e, i) => {
@@ -971,17 +1111,17 @@ function render() {
 
     function toggleCheck(k) { set(k, !get(k)); render(); }
 
-    /* 🌟 BÜYÜK DEĞİŞİKLİK: toggleEtap artık hem .etap-btns hem de .items alanlarını güvenli kapatır ve açıldığında display: grid yapar */
+    /* 🌟 TOGGLE ETAP: Hem .etap-btns hem de .items alanlarını koruyan fonksiyon */
     function toggleEtap(el) {
       const etapBox = el.closest('.etap');
       const btns = etapBox.querySelector('.etap-btns');
       const items = etapBox.querySelector('.items');
 
-      if (items.style.display === "none") {
-        items.style.display = "grid"; // Açıldığında tekrar grid tasarımına sadık kalır
+      if (items.style.display === "none" || !items.style.display) {
+        items.style.display = "grid"; 
         if (btns) btns.style.display = "flex";
       } else {
-        items.style.display = "none";  // Kapandığında tamamen gizlenir
+        items.style.display = "none";  
         if (btns) btns.style.display = "none";
       }
     }
