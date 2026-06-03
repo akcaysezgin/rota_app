@@ -796,125 +796,129 @@
     }
 
     /* ================= UI RENDER ================= */
-    function render() {
-      const app = document.getElementById("app");
-      app.innerHTML = "";
+/* ================= UI RENDER ================= */
+function render() {
+  const app = document.getElementById("app");
+  app.innerHTML = "";
 
-      data.forEach((e, i) => {
-        const box = document.createElement("div");
-        box.className = "etap";
+  data.forEach((e, i) => {
+    const box = document.createElement("div");
+    box.className = "etap";
 
-        box.innerHTML = `
-          <div class="etap-header">
-            <h2 onclick="toggleEtap(this)">${e.name} - %${etapProgress(i)}</h2>
-            <div class="controls">
-              <button class="action-btn" onclick="moveEtap(${i}, -1)">⬆️</button>
-              <button class="action-btn" onclick="moveEtap(${i}, 1)">⬇️</button>
-              <button class="action-btn btn-red" onclick="deleteEtap(${i})">❌</button>
-            </div>
-          </div>
-          <div class="etap-btns" style=" padding: 10px 15px 0 15px; display: none; flex-direction: column; gap: 10px;"></div>
-          <div class="items"></div>
-        `;
+    box.innerHTML = `
+      <div class="etap-header">
+        <h2 onclick="toggleEtap(this)">${e.name} - %${etapProgress(i)}</h2>
+        <div class="controls">
+          <button class="action-btn" onclick="moveEtap(${i}, -1)">⬆️</button>
+          <button class="action-btn" onclick="moveEtap(${i}, 1)">⬇️</button>
+          <button class="action-btn btn-red" onclick="deleteEtap(${i})">❌</button>
+        </div>
+      </div>
+      <div class="etap-btns" style=" padding: 10px 15px 0 15px; display: none; flex-direction: column; gap: 10px;"></div>
+      <div class="items"></div>
+    `;
 
-        const etapBtns = box.querySelector(".etap-btns");
-        const items = box.querySelector(".items");
+    const etapBtns = box.querySelector(".etap-btns");
+    const items = box.querySelector(".items");
 
-        // 1. Harita Linkleri
-        if (e.mapLinks && e.mapLinks.length > 0) {
-          e.mapLinks.forEach(link => {
-            if (link.url.includes("embed")) {
-              const mapDiv = document.createElement("div");
-              mapDiv.className = "map-container";
-              mapDiv.innerHTML = `<div class="map-header">🗺️ ${link.title}</div><iframe src="${link.url}" allowfullscreen="" loading="lazy"></iframe>`;
-              etapBtns.appendChild(mapDiv);
-            } else {
-              const btnUrl = document.createElement("a");
-              btnUrl.className = "map-btn"; 
-              btnUrl.href = link.url; 
-              btnUrl.target = "_blank";
-              btnUrl.innerText = `🗺️ ${link.title} (Haritada Aç)`;
-              etapBtns.appendChild(btnUrl);
-            }
-          });
+    // 1. Harita Linkleri
+    if (e.mapLinks && e.mapLinks.length > 0) {
+      e.mapLinks.forEach(link => {
+        if (link.url.includes("embed")) {
+          const mapDiv = document.createElement("div");
+          mapDiv.className = "map-container";
+          mapDiv.innerHTML = `<div class="map-header">🗺️ ${link.title}</div><iframe src="${link.url}" allowfullscreen="" loading="lazy"></iframe>`;
+          etapBtns.appendChild(mapDiv);
+        } else {
+          const btnUrl = document.createElement("a");
+          btnUrl.className = "map-btn"; 
+          btnUrl.href = link.url; 
+          btnUrl.target = "_blank";
+          btnUrl.innerText = `🗺️ ${link.title} (Haritada Aç)`;
+          etapBtns.appendChild(btnUrl);
         }
-
-        // 2. ASİSTAN PANELİ
-        const assistantContainer = document.createElement("div");
-        assistantContainer.style.cssText = "margin:5px 0; display:grid; grid-template-columns:1fr 1fr; gap:8px;";
-
-        const services = [
-          { label: "Otel", query: "oteller" },
-          { label: "Eczane", query: "eczaneler" },
-          { label: "Market", query: "marketler" },
-          { label: "Benzinlik", query: "akaryakıt istasyonu" },
-          { label: "Kafe", query: "kafeler" },
-          { label: "Restoran", query: "restoranlar" },
-          { label: "Hastane", query: "hastaneler" },
-          { label: "Kamp", query: "kamp alanları" },
-        ];
-
-        services.forEach(s => {
-          const sBtn = document.createElement("button");
-          sBtn.className = "action-btn";
-          sBtn.style.padding = "10px";
-          sBtn.style.background = "#22c55e";
-          sBtn.style.color = "black";
-          sBtn.innerText = `🔍 ${s.label} Ara`;
-          sBtn.onclick = () => {
-            navigator.geolocation.getCurrentPosition(
-              (pos) => {
-                const lat = pos.coords.latitude;
-                const lng = pos.coords.longitude;
-                const query = encodeURIComponent(s.query);
-                const url = `https://www.google.com/maps/search/${query}/@${lat},${lng},12z`;
-                window.open(url, "_blank");
-              },
-              () => {
-                alert("Konum alınamadı.");
-              }
-            );
-          };
-          assistantContainer.appendChild(sBtn);
-        });
-        etapBtns.appendChild(assistantContainer);
-
-        if (etapBtns.children.length === 0) {
-          etapBtns.style.padding = "0";
-        }
-
-        // 3. Duraklar
-        e.places.forEach((p, pIndex) => {
-          const k = key(i, p);
-          const div = document.createElement("div");
-          div.className = "item";
-          const imgId = `img_${i}_${pIndex}`;
-          const imgUrl = (imageCache[p] && imageCache[p].length > 0) ? imageCache[p][0] : getActualPlaceImages(p, imgId);
-
-          div.innerHTML = `
-            <img id="${imgId}" src="${imgUrl}" alt="${p}" onclick="openModal('${p.replace(/'/g, "\\'")}')" />
-            <div style="flex:1">
-              <b>${p}</b><br/>
-              <div class="controls" style="margin-top:5px;">
-                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, -1)">⬆️</button>
-                <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, 1)">⬇️</button>
-                <button class="action-btn btn-red" onclick="deletePlace(${i}, ${pIndex})">❌</button>
-              </div>
-            </div>
-            <button class="${get(k) ? 'done' : 'chk'}" onclick="toggleCheck('${k}')">
-              ${get(k) ? "✔" : "⬜"}
-            </button>
-          `;
-          items.appendChild(div);
-        });
-
-        app.appendChild(box);
       });
-
-      document.getElementById("global").style.width = progress() + "%";
-      renderBadges();
     }
 
+    // 2. ASİSTAN PANELİ
+    const assistantContainer = document.createElement("div");
+    assistantContainer.style.cssText = "margin:5px 0; display:grid; grid-template-columns:1fr 1fr; gap:8px;";
+
+    const services = [
+      { label: "Otel", query: "oteller" },
+      { label: "Eczane", query: "eczaneler" },
+      { label: "Market", query: "marketler" },
+      { label: "Benzinlik", query: "akaryakıt istasyonu" },
+      { label: "Kafe", query: "kafeler" },
+      { label: "Restoran", query: "restoranlar" },
+      { label: "Hastane", query: "hastaneler" },
+      { label: "Kamp", query: "kamp alanları" },
+    ];
+
+    services.forEach(s => {
+      const sBtn = document.createElement("button");
+      sBtn.className = "action-btn";
+      sBtn.style.padding = "10px";
+      sBtn.style.background = "#22c55e";
+      sBtn.style.color = "black";
+      sBtn.innerText = `🔍 ${s.label} Ara`;
+      sBtn.onclick = () => {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            const query = encodeURIComponent(s.query);
+            // KANKA NOT: Eski googleusercontent linkini, çalışan resmi Google Maps arama linkine çevirdim.
+            const url = `https://www.google.com/maps/search/${query}/@${lat},${lng},14z`;
+            window.open(url, "_blank");
+          },
+          () => {
+            alert("Konum alınamadı.");
+          }
+        );
+      };
+      assistantContainer.appendChild(sBtn);
+    });
+    etapBtns.appendChild(assistantContainer);
+
+    if (etapBtns.children.length === 0) {
+      etapBtns.style.padding = "0";
+    }
+
+    // 3. Duraklar
+    e.places.forEach((p, pIndex) => {
+      const k = key(i, p);
+      const div = document.createElement("div");
+      div.className = "item";
+      const imgId = `img_${i}_${pIndex}`;
+      const imgUrl = (imageCache[p] && imageCache[p].length > 0) ? imageCache[p][0] : getActualPlaceImages(p, imgId);
+
+      // KANKA NOT: İstediğin gibi adresi ilk virgüle göre parçalayıp kısa ismi aldık
+      const shortName = p.includes(',') ? p.split(',')[0].trim() : p;
+
+      div.innerHTML = `
+        <img id="${imgId}" src="${imgUrl}" alt="${shortName}" onclick="openModal('${p.replace(/'/g, "\\'")}')" />
+        <div style="flex:1">
+          <b>${shortName}</b><br/>
+          <div class="controls" style="margin-top:5px;">
+            <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, -1)">⬆️</button>
+            <button class="action-btn" onclick="movePlace(${i}, ${pIndex}, 1)">⬇️</button>
+            <button class="action-btn btn-red" onclick="deletePlace(${i}, ${pIndex})">❌</button>
+          </div>
+        </div>
+        <button class="${get(k) ? 'done' : 'chk'}" onclick="toggleCheck('${k}')">
+          ${get(k) ? "✔" : "⬜"}
+        </button>
+      `;
+      items.appendChild(div);
+    });
+
+    app.appendChild(box);
+  });
+
+  document.getElementById("global").style.width = progress() + "%";
+  renderBadges();
+}
     function renderBadges() {
       const b = document.getElementById("badges"); b.innerHTML = "";
       data.forEach((e, i) => {
