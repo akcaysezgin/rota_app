@@ -1,214 +1,221 @@
 [
-    {
-        "id": 1,
-        "name": "1. Etap: Ankara - Marmara Geçişi & Kuzey Ege",
-        "mapLinks": [
-            {
-                "title": "1. Etap: Güney Marmara'dan Kuzey Ege'ye (Bursa -> Ayvalık)",
-                "url": "https://www.google.com/maps/dir/Ankara/Ulu+Cami,+Nalbanto%C4%9Flu,+16010+Osmangazi%CC%87%2FBursa/Akropolis+de+P%C3%A9rgamo,+Ulucamii,+35700+Bergama%2F%C4%B0zmir/K%C4%B1z%C4%B1l+Avlu,+%C4%B0slamsaray,+Bergama+Yolu+1.+Km,+35700+Bergama%2F%C4%B0zmir/Pergamon+Amfitiyatrosu,+Sel%C3%A7uk,+35700+Bergama%2F%C4%B0zmir/Asklepion,+Zafer,+Site+Sk.+No:16,+35700+Bergama%2F%C4%B0zmir/Aigai+(Aiolis)+Antik+Kenti,+Yuntda%C4%9F%C4%B1k%C3%B6seler,+Yuntda%C4%9F%C4%B1k%C3%B6seler+K%C3%B6y%C3%BC+%C4%B0%C3%A7+Yolu,+45110+Merkez%2FManisa/@38.4806381,27.4116863,153661m/data=!3m1!1e3!4m44!4m43!1m5!1m1!1s0x14d347d520732db1:0xbdc57b0c0842b8d!2m2!1d32.8597419!2d39.9333635!1m5!1m1!1s0x14ca3de3eace9f73:0x83982b802f7aff56!2m2!1d29.0619025!2d40.1840458!1m5!1m1!1s0x14b9f890a11a9d03:0xfc94242bf1691b15!2m2!1d27.1861385!2d39.1313028!1m5!1m1!1s0x14b9f85da23e274d:0x761807842cfcb6c1!2m2!1d27.1833973!2d39.1219678!1m5!1m1!1s0x14b9f8821d300959:0x781e264991db57c8!2m2!1d27.1739754!2d39.1256092!1m5!1m1!1s0x14ba027e283a2e59:0x32cbb85c7d729137!2m2!1d27.1655701!2d39.1188601!1m5!1m1!1s0x14b989eda33dd3a9:0x72e9df33ba50369!2m2!1d27.1934614!2d38.8338219!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],
-        "services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-       "places": [
-            "Ankara Kalesi",
-            "Gordion Antik Kenti",
-            "Tarihi Odunpazarı Evleri",
-            "Ertuğrul Gazi Türbesi",
-            "İznik Kalesi",
-            "İznik Surları",
-            "Susurluk",
-            "Şeytan Deresi Kanyonu",
-            "Dikili Bademli Koyu",
-            "Aşıklar Şelalesi",
-            "Ağlayan Mağara",
-            "Bergama Antik Kenti",
-            "Kızıl Avlu",
-            "Ayvalık Şeytan Sofrası",
-            "Cunda Adası",
-            "Taksiyarhis Kilisesi",
-            "Sardes Antik Kenti",
-            "Karagöl Orman Kampı"
-        ]
-    
-    },
-    {
-        "id": 2,
-        "name": "2. Etap: İzmir Yarımada & Tarih - Şarap Rotası",
-        "mapLinks": [
-            {
-                "title": "2.1. Etap: İzmir Yarımada Turu (Karagöl -> Çeşme)",
-                "url": "https://www.google.com/maps/dir/Su+U%C3%A7an+%C5%9Eelalesi,+Turgutlar,+35660+Menemen%2F%C4%B0zmir/Sardes+Antik+Kenti+-+Manisa,+Zafer,+Belediye+Cd.+No:124,+45300+Salihli%2FManisa/Kemeralt%C4%B1+%C3%87ar%C5%9F%C4%B1s%C4%B1,+Konak,+Anafartalar+Cd.,+35250+Konak%2F%C4%B0zmir/Kordon+Alsancak+%C4%B0zmir,+Alsancak,+35250+Konak%2F%C4%B0zmir/%C3%87e%C5%9Fme+Kalesi,+Musalla,+1015.+Sk.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ayios+Haralambos+Kilisesi,+%C4%B0smet+%C4%B0n%C3%B6n%C3%BC,+Atat%C3%BCrk+Blv.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ala%C3%A7at%C4%B1,+%C3%87e%C5%9Fme%2F%C4%B0zmir/%C3%87E%C5%9EME+ALTINKUM+PLAJ,+Alt%C4%B1nkum,+Unnamed+Road,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/@38.5572048,26.9911481,159524m/data=!3m1!1e3!4m50!4m49!1m5!1m1!1s0x14ba29cb6314d2b3:0x6d7dca4cb320c94c!2m2!1d27.1555561!2d38.7351091!1m5!1m1!1s0x14b851472dfba2a3:0xad9b1b372c570696!2m2!1d28.0402778!2d38.4883333!1m5!1m1!1s0x14bbd8e3fa1744e7:0xfc15e392fd3613c8!2m2!1d27.1330121!2d38.4186948!1m5!1m1!1s0x14bbd85b1ee6cb8d:0x6a9bc8cd5752e270!2m2!1d27.1414413!2d38.4381638!1m5!1m1!1s0x14bb7a350dcffa85:0x699383ed74c72fb6!2m2!1d26.3035005!2d38.3234659!1m5!1m1!1s0x14bb7a35b5b9c735:0x278af8a0eb3e4276!2m2!1d26.3039755!2d38.3251871!1m5!1m1!1s0x14bb78dfaf0d56d9:0x29d825d486962be3!2m2!1d26.3778354!2d38.2887204!1m5!1m1!1s0x14bb7c5e2966ec4b:0x4b816954d33fb7d3!2m2!1d26.2810599!2d38.2679392!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            },
-            {
-                "title": "2.2. Etap: Antik İyonya & Şarap Rotası (Çeşme -> Şirince)",
-                "url": "https://www.google.com/maps/dir/%C3%87E%C5%9EME+ALTINKUM+PLAJ,+Alt%C4%B1nkum,+Unnamed+Road,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/%C5%9Eirince,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Sel%C3%A7uk+(Ayasuluk)+Kalesi,+%C4%B0sa+Bey,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Efes+Antik+Kenti,+Atat%C3%BCrk,+Efes+Harabeleri,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Meryem+Ana+Evi,+Atat%C3%BCrk+Mahallesi,+Meryemana+Mevkii,+K%C3%BCme+Evler,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Yedi+Uyurlar+Ma%C4%9Faras%C4%B1+-+Sel%C3%A7uk,+Atat%C3%BCrk,+35920+Sel%C3%A7uk%2F%C4%B0zmir/G%C3%BCvercinada+Kalesi+(K%C3%BC%C3%A7%C3%BCkada),+G%C3%BCvercin+Adas%C4%B1,+09400+Ku%C5%9Fadas%C4%B1%2FAyd%C4%B1n/Ku%C5%9Fadas%C4%B1,+Ayd%C4%B1n/@38.2539955,26.5039224,129619m/data=!3m1!1e3!4m49!4m48!1m5!1m1!1s0x14bb7c5e2966ec4b:0x4b816954d33fb7d3!2m2!1d26.2810599!2d38.2679392!1m5!1m1!1s0x14b94cbfaf360b85:0x37a5b8ca1efaa11c!2m2!1d27.431625!2d37.944101!1m5!1m1!1s0x14b94d5bdc8e6381:0x6c66a33059a0c798!2m2!1d27.3681101!2d37.955515!1m5!1m1!1s0x14bead48f0b30447:0xd0fbf18a0924b6f8!2m2!1d27.3414579!2d37.9409263!1m5!1m1!1s0x14bead0a3e862cf1:0x2a331e0fe92e6c9d!2m2!1d27.3341633!2d37.911723!1m5!1m1!1s0x14bead5308c8a35f:0x84a2fec2f07e0430!2m2!1d27.3536785!2d37.9437053!1m5!1m1!1s0x14bea917134f9931:0x8669818cc6caea0!2m2!1d27.2476431!2d37.8636647!1m5!1m1!1s0x14bea92b956a5427:0xd89b725d100f2ef4!2m2!1d27.261015!2d37.857913?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],"services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-        "places": [
-            "Kemeraltı Çarşısı",
-            "Su Uçan Şelalesi",
-            "Ayios Haralambos Kilisesi",
-            "Çeşme Kalesi",
-            "Alaçatı Sokakları",
-            "Altınkum Plajı",
-            "Efes Antik Kenti",
-            "Ayasuluk Kalesi",
-            "Meryem Ana Evi",
-            "Yedi Uyurlar Mağarası",
-            "Şirince Köyü"
-        ]
-    },
-    {
-        "id": 3,
-        "name": "3. Etap: Aydın & Denizli Geçişi",
-        "mapLinks": [
-            {
-                "title": "3.1 Etap: Aydın'dan Beyaz Rüya Pamukkale'ye (Şirince -> Denizli)",
-                "url": "https://www.google.com/maps/dir/%C5%9Eirince,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Zeus+Ma%C4%9Faras%C4%B1,+G%C3%BCzel%C3%A7aml%C4%B1,+09430+Ku%C5%9Fadas%C4%B1%2FAyd%C4%B1n/Priene+%C3%96ren+Yeri,+G%C3%BCll%C3%BCbah%C3%A7e,+09230+S%C3%B6ke%2FAyd%C4%B1n/Arpaz+Kalesi,+Esenk%C3%B6y,+09800+Nazilli%2FAyd%C4%B1n/Afrodisias+Antik+Kenti+%C3%96renyeri,+Geyre,+09385+Karacasu%2FAyd%C4%B1n/Denizli+Hierapolis+(Pamukkale)+%C3%96ren+yeri,+Pamukkale,+20280+Pamukkale%2FDenizli/Kakl%C4%B1k+Ma%C4%9Faras%C4%B1+ve+Y%C3%BCzme+Havuzu,+Kakl%C4%B1k,+Haydar+Baba+Caddesi,+20240+Honaz%2FDenizli/Laodikeia+Antik+Kenti,+Goncal%C4%B1,+R4P5%2BHW,+20000+Merkez%2FPamukkale%2FDenizli/Pamukkale+Travertenleri,+Merkez,+20190+Pamukkale%2FDenizli/@38.3556024,26.2981594,598182m/data=!3m1!1e3!4m56!4m55!1m5!1m1!1s0x14b94cbfaf360b85:0x37a5b8ca1efaa11c!2m2!1d27.431625!2d37.944101!1m5!1m1!1s0x14bea0fc6f2c2ec9:0x44a727e0b97c445c!2m2!1d27.2157848!2d37.7112511!1m5!1m1!1s0x14bea26ed532c543:0x320934edf02aeabb!2m2!1d27.301017!2d37.6597223!1m5!1m1!1s0x14b8b718c7c5b9a7:0xbcbbebbc06373501!2m2!1d28.3486982!2d37.8063138!1m5!1m1!1s0x14c756fe3a3ff061:0x6462d1f03e82b979!2m2!1d28.7277923!2d37.7090827!1m5!1m1!1s0x14c7123078143189:0x9401976242555932!2m2!1d29.1232436!2d37.9248791!1m5!1m1!1s0x14c71d10ef8a4c83:0xaf8205026d417833!2m2!1d29.385274!2d37.855614!1m5!1m1!1s0x14c715b3e6275289:0xd07e2e5ffb29ef9f!2m2!1d29.1087807!2d37.8367423!1m5!1m1!1s0x14c7123a74a0e4d5:0x92c4f1427b58305b!2m2!1d29.1232377!2d37.9243909!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            },
-            {
-                "title": "3.2 Etap: Denizli Mağaraları & Bodrum Giriş (Denizli -> Bodrum)",
-                "url": "https://www.google.com/maps/place/Akb%C3%BCk+Koyu+-+G%C3%B6kova/@37.0979528,25.941568,234581m/data=!3m1!1e3!4m51!1m44!4m43!1m6!1m2!1s0x14c715b3e6275289:0xd07e2e5ffb29ef9f!2sLaodikeia+Antik+Kenti,+Goncal%C4%B1,+R4P5%2BHW,+20000+Merkez%2FPamukkale%2FDenizli!2m2!1d29.1087807!2d37.8367423!1m6!1m2!1s0x14c70aa44af46913:0xb7b8bb0e615101d4!2zR8O8bmV5IMWeZWxhbGVzaSBNaWxsaSBQYXJrxLEsIENpbmRlcmUsIDIwNDYwIEfDvG5leS9EZW5pemxp!2m2!1d29.0607027!2d38.1197844!1m6!1m2!1s0x14c71d10ef8a4c83:0xaf8205026d417833!2sKakl%C4%B1k+Ma%C4%9Faras%C4%B1+ve+Y%C3%BCzme+Havuzu,+Kakl%C4%B1k,+Haydar+Baba+Caddesi,+20240+Honaz%2FDenizli!2m2!1d29.385274!2d37.855614!1m6!1m2!1s0x14bf195f83fc7359:0x4d30dec47cd134cc!2zTGFnaW5hIEhla2F0ZSBUYXDEsW5hxJ_EsSwgVHVyZ3V0LCA0ODU0MCBZYXRhxJ9hbi9NdcSfbGE!2m2!1d28.039438!2d37.378572!1m6!1m2!1s0x14be6c4faeb0d669:0x51a6e218f706590a!2zQm9kcnVtLCBNdcSfbGE!2m2!1d27.43054!2d37.034407!1m6!1m2!1s0x14be6c4234600e63:0x2bd4f1f586d41c71!2zQm9kcnVtIEthbGVzaSB2ZSBTdWFsdMSxIEFya2VvbG9qaSBNw7x6ZXNpLCDDh2FyxZ_EsSwgS2FsZSBDZC4sIDQ4NDAwIEJvZHJ1bS9NdcSfbGE!2m2!1d27.4291652!2d37.0317978!3e0!3m5!1s0x14bfaf4494834fd5:0x90175dd73bf0af22!8m2!3d37.0332103!4d28.0987542!16s%2Fg%2F11c1q41_w_?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],"services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-       "places": [
-            "Güvercinada Kalesi",
-            "Kuşadası Sahili",
-            "Zeus Mağarası",
-            "Dilek Yarımadası",
-            "Priene Antik Kenti",
-            "Aphrodisias Antik Kenti",
-            "Arpaz Kalesi",
-            "Pamukkale Travertenleri",
-            "Hierapolis Antik Kenti",
-            "Laodikeia Antik Kenti",
-            "Ağlayan Kaya Şelalesi",
-            "Güney Şelalesi",
-            "Kaklık Mağarası",
-            "Keloğlan Mağarası",
-            "Bodrum Sahili",
-            "Bodrum Kalesi"
-        ]
-    },
-    {
-        "id": 4,
-        "name": "4. Etap: Muğla Sahil & Kamp Rotası",
-        "mapLinks": [
-            {
-                "title": "4.1 Etap: Karya Yarımadası & Muğla Sahilleri (Bodrum -> Akyaka)",
-                "url": "https://www.google.com/maps/dir/Bodrum+Kalesi/Eski+Dat%C3%A7a/Palamutb%C3%BCk%C3%BC/Knidos+Antik+Kenti/%C4%B0%C3%A7meler/Marmaris+Kalesi/Nimara+Ma%C4%9Faras%C4%B1/Azmak+Nehri,+Ula/"
-            },
-            {
-                "title": "4.2 Etap: Carettalar, Kanyonlar & Bohem Kamp (Akyaka -> Fethiye)",
-                "url": "https://www.google.com/maps/dir/Akyaka+Azmak+Nehri,+Akyaka,+Azmakboyu+Sk.,+48650+Ula%2FMu%C4%9Fla/Yuvarlak%C3%A7ay+Restaurant,+Yuvarlak+%C3%87ay+Location,+Beyobas%C4%B1,+48800+K%C3%B6yce%C4%9Fiz%2FMu%C4%9Fla/Dalyan,+Ortaca%2FMu%C4%9Fla/%C4%B0ZTUZU+PLAJI,+G%C3%B6kbel,+48600+Ortaca%2FMu%C4%9Fla/Kelebekler+Vadisi,+Faralya,+48000+Fethiye%2FMu%C4%9Fla/Kabak+Koyu,+Faralya,+Kabak+Sokak,+48300+Fethiye%2FMu%C4%9Fla/@36.8211646,28.3057673,203778m/data=!3m1!1e3!4m37!4m36!1m5!1m1!1s0x14bf9f00160dbc97:0xc49b8b9590ca9e07!2m2!1d28.3280684!2d37.0503519!1m5!1m1!1s0x14c07db0849d67a5:0x99127dfdc198d14a!2m2!1d28.7974818!2d36.9137687!1m5!1m1!1s0x14bf87d9a39c1afd:0x84dd3564569e4dd2!2m2!1d28.642607!2d36.834258!1m5!1m1!1s0x14bf88e0da08a73d:0x92291bc5c3786fc!2m2!1d28.6315771!2d36.7769424!1m5!1m1!1s0x14c03f97facb6037:0xaf8f4ce25388337d!2m2!1d29.1281666!2d36.4988702!1m5!1m1!1s0x14c03f8fd5c5eb3d:0x131493c45f3d3221!2m2!1d29.1257681!2d36.4616702?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],
-        "services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-        "places": [
-            "Bodrum Datça Feribotu",
-            "Eski Datça Sokakları",
-            "Palamutbükü",
-            "Knidos Antik Kenti",
-            "İçmeler Sahili",
-            "Marmaris Kalesi",
-            "Nimara Mağarası",
-            "Akyaka Azmak Nehri",
-            "Yuvarlakçay",
-            "Dalyan Kanalı",
-            "Kaunos Antik Kenti",
-            "İztuzu Plajı",
-            "Kelebekler Vadisi",
-            "Saklıkent Kanyonu",
-            "Gizlikent Şelalesi",
-            "Xanthos Antik Kenti",
-            "Tlos Antik Kenti",
-            "Amyntas Kaya Mezarları",
-            "Kabak Koyu"
-        ]
-    },
-    {
-        "id": 5,
-        "name": "5. Etap: Akdeniz Sahil Hattı",
-        "mapLinks": [
-            {
-                "title": "5.1 Etap: Fethiye Macera Hattı & Batı Likya (Fethiye -> Kaş)",
-                "url": "https://www.google.com/maps/dir/Kabak+Koyu,+Faralya,+Kabak+Sokak,+48300+Fethiye%2FMu%C4%9Fla/Mavi+Ma%C4%9Fara,+Faralya,+48300+Fethiye%2FMu%C4%9Fla/Gizlikent+%C5%9Eelalesi,+Kayadibi,+mezgitler+Sokak+no+28,+48850+Seydikemer%2FMu%C4%9Fla/Tlos+Antik+Kenti,+Yakak%C3%B6y,+Sakl%C4%B1kent+Yolu,+48850+Fethiye%2FMu%C4%9Fla/Sakl%C4%B1kent+Milli+Park%C4%B1,+Kayadibi,+Sakl%C4%B1kent+Sokak+No+:+26,+48300+Seydikemer%2FMu%C4%9Fla/Patara+Antik+Kenti,+Kalkan,+07960+Ka%C5%9F%2FAntalya/Kaputa%C5%9F+Plaj%C4%B1,+Bezirgan,+07580+Kemer%2FKa%C5%9F%2FAntalya/Xanthos+Antik+Kenti,+K%C4%B1n%C4%B1k,+Asar+Cd.,+07970+Ka%C5%9F%2FAntalya/Ka%C5%9F,+Andifli,+07580+Ka%C5%9F%2FAntalya/@36.4216832,29.2103165,59165m/data=!3m2!1e3!4b1!4m55!4m54!1m5!1m1!1s0x14c03f8fd5c5eb3d:0x131493c45f3d3221!2m2!1d29.1257681!2d36.4616702!1m5!1m1!1s0x14c03f3bdcf68ded:0xe7d9d0c4135e5d75!2m2!1d29.1233169!2d36.5160676!1m5!1m1!1s0x14c04abdd70e4a69:0x82a64ba6a9c23ff!2m2!1d29.397798!2d36.4832306!1m5!1m1!1s0x14c04d83c57ea3bf:0x8ec7fb739f90327!2m2!1d29.420206!2d36.5542339!1m5!1m1!1s0x14c04aa8d2b88d5f:0x73cd5e161507819d!2m2!1d29.403431!2d36.4737581!1m5!1m1!1s0x14c02d299fe9a7cd:0x15498ee97f108be1!2m2!1d29.3154847!2d36.2614096!1m5!1m1!1s0x14c1d37060c20369:0xb0509cbcd714c4d5!2m2!1d29.448939!2d36.2289562!1m5!1m1!1s0x14c02d2b00000001:0xd4c7a08ac6d7da01!2m2!1d29.3183278!2d36.3565731!1m5!1m1!1s0x14c1da54a506cf4d:0xcfbf502fb3cb4db3!2m2!1d29.63955!2d36.199913?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            },
-            {
-                "title": "5.2 Etap: Batık Şehirlerden Antalya Falezlerine (Kaş -> Antalya)",
-                "url": "https://www.google.com/maps/dir/Ka%C5%9F,+Andifli,+07580+Ka%C5%9F%2FAntalya/Myra+Antik+Kenti,+Myra+%C3%96renyeri%2FMyra+Antik+Kenti,+Alakent,+07570+Demre%2FAntalya/St.+Nicholas+Kilisesi,+Merkez+Mahallesi,+07570+Demre+(Kale)%2FDemre%2FAntalya/Finike+Suluin+Ma%C4%9Faras%C4%B1,+Finike+Demre+Karayolu,+%C3%BCzeri,+07740+Finike%2FAntalya/G%C3%B6yn%C3%BCk+Kanyonu,+Beldibi,+%C3%87omaklar+Mevkii+MGJM%2BRF+No:73,+07982+Kemer%2FAntalya/Phaselis+%C3%96renyeri,+Tekirova,+8011+Sokak+No:1,+07990+Kemer%2FAntalya/Olimpos+Plaj%C4%B1,+Ulup%C4%B1nar,+07982+Kemer%2FAntalya/Yanarta%C5%9F+Milli+Park%C4%B1,+Kuzdere,+07980+Kemer%2FAntalya/@36.4407862,29.7680717,118300m/data=!3m2!1e3!4b1!4m49!4m48!1m5!1m1!1s0x14c1da54a506cf4d:0xcfbf502fb3cb4db3!2m2!1d29.63955!2d36.199913!1m5!1m1!1s0x14c1f20daaaaaaab:0x5b0823a7d917edc2!2m2!1d29.9851405!2d36.2588782!1m5!1m1!1s0x14c1f20daaaaaaab:0xdad8c9d69a8675e9!2m2!1d29.9853427!2d36.2448616!1m5!1m1!1s0x14c18b5d69e526bf:0xfd042e00f74a40da!2m2!1d30.150046!2d36.2821821!1m5!1m1!1s0x14c3b89ecfa4f447:0xc5ec08ed64f2f2cc!2m2!1d30.5340986!2d36.6826103!1m5!1m1!1s0x14c3b5c03f811177:0x6b65b38b55449cd7!2m2!1d30.5520265!2d36.5251534!1m5!1m1!1s0x14c23688d5941d43:0x67f6609d433d9788!2m2!1d30.4805996!2d36.4093789!1m5!1m1!1s0x14c2343f3a2b26c7:0x19db5331c84857ef!2m2!1d30.4563828!2d36.4311275?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],"services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-       "places": [
-            "Mavi Mağara",
-            "Patara Antik Kenti",
-            "Kaputaş Plajı",
-            "Kaş Merkez",
-            "Myra Antik Kenti",
-            "Aziz Nikolaos Kilisesi",
-            "Simena Kalesi",
-            "Kaleköy",
-            "Finike Suluin Mağarası",
-            "Göynük Kanyonu",
-            "Phaselis Antik Kenti",
-            "Korsanlar Mağarası",
-            "Olimpos Sahili",
-            "Çıralı Kamp Alanı",
-            "Yanartaş",
-            "Kaleiçi Surları",
-            "Perge Antik Kenti",
-            "Aspendos Antik Kenti",
-            "Düden Şelalesi",
-            "Karain Mağarası"
-        ]
-    },
-    {
-        "id": 6,
-        "name": "6. Etap: Göller Yöresi & İç Anadolu",
-        "mapLinks": [
-            {
-                "title": "6.1 Etap: Pamfilya'dan Göller Yöresine (Antalya -> Isparta)",
-                "url": "https://www.google.com/maps/dir/Yanarta%C5%9F+Milli+Park%C4%B1,+Kuzdere,+07980+Kemer%2FAntalya/Kalei%C3%A7i,+Sel%C3%A7uk,+07100+Muratpa%C5%9Fa%2FAntalya/Perge+%C3%96renyeri,+Barbaros,+Perge+Yolu,+07112+Aksu%2FAntalya/Aspendos+Antik+Tiyatrosu,+Belk%C4%B1s,+Aspendos+Yolu,+07500+Serik%2FAntalya/Manavgat+%C5%9Eelalesi,+Sar%C4%B1lar,+istiklal+caddesi+No:4,+07600+Manavgat%2FAntalya/Yukar%C4%B1+D%C3%BCden+%C5%9Eelalesi,+Varsak+Mahallesi+D%C3%BCden+%C5%9Eelalesi+Park%C4%B1+i%C3%A7i,+Kepez%2FAntalya/Karain+Ma%C4%9Faras%C4%B1,+Ya%C4%9Fca,+07190+Antalya+Merkez%2FAntalya/Sagalassos+%C3%96renyeri,+K%C4%B1ra%C3%A7,+15800+A%C4%9Flasun%2FBurdur/%C4%B0nsuyu+Ma%C4%9Faras%C4%B1,+%C4%B0nsuyu,+15000+%C3%87ata%C4%9F%C4%B1l%2FBurdur+Merkez%2FBurdur/@37.0392565,30.2531706,234763m/data=!3m1!1e3!4m56!4m55!1m5!1m1!1s0x14c2343f3a2b26c7:0x19db5331c84857ef!2m2!1d30.4563828!2d36.4311275!1m5!1m1!1s0x14c390069cad945f:0xdae5fa1b55b3ba73!2m2!1d30.7049967!2d36.8862715!1m5!1m1!1s0x14c381a96a370743:0xc68467e8d8ebb407!2m2!1d30.8525386!2d36.957694!1m5!1m1!1s0x14c49e7638f76edd:0x82aaad9ddfd636b6!2m2!1d31.1721993!2d36.9389411!1m5!1m1!1s0x14c35709367f1dd1:0x7b6765df94fc38ac!2m2!1d31.4532539!2d36.8129911!1m5!1m1!1s0x14c38609ce7b71bb:0x72b76ecab61aa788!2m2!1d30.7267783!2d36.9647146!1m5!1m1!1s0x14c38a863330bc55:0x9491e6c9de083d3!2m2!1d30.5708333!2d37.0777778!1m5!1m1!1s0x14c43583dcecb491:0x78e5fdf4d67f7360!2m2!1d30.5215496!2d37.6783848!1m5!1m1!1s0x14c431bb9fdc6425:0x841c01d11dcc8d1b!2m2!1d30.3752242!2d37.6594092!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],"services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-        "places": [
-            "Salda Gölü",
-            "Sagalassos Antik Kenti",
-            "Kibyra Antik Kenti",
-            "İnsuyu Mağarası",
-            "Isparta Merkez",
-            "Eğirdir Kalesi",
-            "Yazılı Kanyon",
-            "Antiocheia Antik Kenti",
-            "Mevlana Müzesi",
-            "Çatalhöyük",
-            "Kilistra Kaya Kiliseleri",
-            "Konya Kalesi"
-        ]
-    },
-    {
-        "id": 7,
-        "name": "7. Etap: Kapadokya & Ankara Dönüş",
-        "mapLinks": [
-            {
-                "title": "7.1 Etap: Selçuklu Toprakları & Kapadokya Kapanışı (Isparta -> Ankara)",
-                "url": "https://www.google.com/maps/place/Kilistra+tarihi+yer/@37.4224812,29.9870341,467145m/data=!3m1!1e3!4m64!1m57!4m56!1m6!1m2!1s0x14c431bb9fdc6425:0x841c01d11dcc8d1b!2zxLBuc3V5dSBNYcSfYXJhc8SxLCDEsG5zdXl1LCAxNTAwMCDDh2F0YcSfxLFsL0J1cmR1ciBNZXJrZXovQnVyZHVy!2m2!1d30.3752242!2d37.6594092!1m6!1m2!1s0x14c5a0e0819c42f1:0xd7a110f0280a8ce9!2zRcSfaXJkaXIgS2FsZXNpLCBLYWxlLCBVenVuIMOHYXLFn8SxIFNrLiwgMzI1MDAgRcSfaXJkaXIvSXNwYXJ0YQ!2m2!1d30.8531217!2d37.8762904!1m6!1m2!1s0x14d0851041d7b9a3:0x843bb18685ba9410!2sMevlana+M%C3%BCzesi,+Aziziye,+Mevlana+Cd.+No:1,+42030+Karatay%2FKonya!2m2!1d32.504999!2d37.8707281!1m6!1m2!1s0x14d0a73eec8e512d:0x963a6c2aaf521b79!2zw4dhdGFsaMO2ecO8ayDDlnJlbnllcmksIEvDvMOnw7xra8O2eSwgw4dhdGFsaMO2ecO8ayBZb2x1LCA0MjUwMCDDh3VtcmEvS29ueWE!2m2!1d32.8265704!2d37.6680469!1m6!1m2!1s0x14d60fc188759b91:0xeb006bf365b859d0!2sIhlara,+Kayaard%C4%B1,+68570+Ihlara%2FG%C3%BCzelyurt%2FAksaray!2m2!1d34.306363!2d38.238506!1m6!1m2!1s0x14d61372735fb905:0x49b420fcc022e066!2sViran%C5%9Fehir+(Mokisos+antik+kenti),+Cumhuriyet+Mahallesi,+Unnamed+Road,+68000,+Helvadere%2FAksaray+Merkez%2FAksaray!2m2!1d34.2068181!2d38.1893319!1m6!1m2!1s0x152a67ece7bbe4ed:0xbbca14b0d18fccfe!2zR8O2cmVtZSBBw6fEsWsgSGF2YSBNw7x6ZXNpLCDEsHNhbGkgLSBHYWZlcmxpIC0gQXZjxLFsYXIsIDUwMTgwIEfDtnJlbWUvTmV2xZ9laGlyIE1lcmtlei9OZXbFn2VoaXI!2m2!1d34.8439267!2d38.6415792!1m6!1m2!1s0x14d347d520732db1:0xbdc57b0c0842b8d!2sAnkara!2m2!1d32.8597419!2d39.9333635!3m5!1s0x14da8f9ce2a325c5:0x9a24dc65ab14738b!8m2!3d37.6661447!4d32.2135036!16s%2Fg%2F11s_wwpw5m?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-            }
-        ],"services": ["Eczane", "Otel", "Market", "Veteriner", "Akaryakıt"],
-        "places": [
-            "Ihlara Vadisi",
-            "Yılanlı Kilise",
-            "Melendiz Çayı Şelaleleri",
-            "Nora Antik Kenti",
-            "Göreme Açık Hava Müzesi",
-            "Karanlık Kilise",
-            "Ürgüp Peri Bacaları",
-            "Uçhisar Kalesi",
-            "Ortahisar Kalesi",
-            "Derinkuyu Yeraltı Şehri",
-            "Kaymaklı Yeraltı Şehri",
-            "Özkonak Mağaraları",
-            "Ankara"
-        ]
-    }
+  {
+    "id": 1780489973895,
+    "name": "1. Ankara - Bergama - Manisa",
+    "mapLinks": [
+      {
+        "title": "1 etap Haritası",
+        "url": "https://www.google.com/maps/dir/Ankara/Ulu+Cami,+Nalbanto%C4%9Flu,+16010+Osmangazi%CC%87%2FBursa/Akropolis+de+P%C3%A9rgamo,+Ulucamii,+35700+Bergama%2F%C4%B0zmir/K%C4%B1z%C4%B1l+Avlu,+%C4%B0slamsaray,+Bergama+Yolu+1.+Km,+35700+Bergama%2F%C4%B0zmir/Pergamon+Amfitiyatrosu,+Sel%C3%A7uk,+35700+Bergama%2F%C4%B0zmir/Asklepion,+Zafer,+Site+Sk.+No:16,+35700+Bergama%2F%C4%B0zmir/Aigai+(Aiolis)+Antik+Kenti,+Yuntda%C4%9F%C4%B1k%C3%B6seler,+Yuntda%C4%9F%C4%B1k%C3%B6seler+K%C3%B6y%C3%BC+%C4%B0%C3%A7+Yolu,+45110+Merkez%2FManisa/@38.4806381,27.4116863,153661m/data=!3m1!1e3!4m44!4m43!1m5!1m1!1s0x14d347d520732db1:0xbdc57b0c0842b8d!2m2!1d32.8597419!2d39.9333635!1m5!1m1!1s0x14ca3de3eace9f73:0x83982b802f7aff56!2m2!1d29.0619025!2d40.1840458!1m5!1m1!1s0x14b9f890a11a9d03:0xfc94242bf1691b15!2m2!1d27.1861385!2d39.1313028!1m5!1m1!1s0x14b9f85da23e274d:0x761807842cfcb6c1!2m2!1d27.1833973!2d39.1219678!1m5!1m1!1s0x14b9f8821d300959:0x781e264991db57c8!2m2!1d27.1739754!2d39.1256092!1m5!1m1!1s0x14ba027e283a2e59:0x32cbb85c7d729137!2m2!1d27.1655701!2d39.1188601!1m5!1m1!1s0x14b989eda33dd3a9:0x72e9df33ba50369!2m2!1d27.1934614!2d38.8338219!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Ankara",
+      "Ulu Cami, Nalbantoğlu, 16010 Osmangazi̇/Bursa",
+      "Akropolis de Pérgamo, Ulucamii, 35700 Bergama/İzmir",
+      "Kızıl Avlu, İslamsaray, Bergama Yolu 1. Km, 35700 Bergama/İzmir",
+      "Pergamon Amfitiyatrosu, Selçuk, 35700 Bergama/İzmir",
+      "Asklepion, Zafer, Site Sk. No:16, 35700 Bergama/İzmir",
+      "Aigai (Aiolis) Antik Kenti, Yuntdağıköseler, Yuntdağıköseler Köyü İç Yolu, 45110 Merkez/Manisa"
+    ]
+  },
+  {
+    "id": 1780490003999,
+    "name": "2. Manisa - İzmir - Çeşme",
+    "mapLinks": [
+      {
+        "title": "2.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Su+U%C3%A7an+%C5%9Eelalesi,+Turgutlar,+35660+Menemen%2F%C4%B0zmir/Sardes+Antik+Kenti+-+Manisa,+Zafer,+Belediye+Cd.+No:124,+45300+Salihli%2FManisa/Kemeralt%C4%B1+%C3%87ar%C5%9F%C4%B1s%C4%B1,+Konak,+Anafartalar+Cd.,+35250+Konak%2F%C4%B0zmir/Kordon+Alsancak+%C4%B0zmir,+Alsancak,+35250+Konak%2F%C4%B0zmir/%C3%87e%C5%9Fme+Kalesi,+Musalla,+1015.+Sk.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ayios+Haralambos+Kilisesi,+%C4%B0smet+%C4%B0n%C3%B6n%C3%BC,+Atat%C3%BCrk+Blv.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ala%C3%A7at%C4%B1,+%C3%87e%C5%9Fme%2F%C4%B0zmir/%C3%87E%C5%9EME+ALTINKUM+PLAJ,+Alt%C4%B1nkum,+Unnamed+Road,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/@38.5572048,26.9911481,159524m/data=!3m1!1e3!4m50!4m49!1m5!1m1!1s0x14ba29cb6314d2b3:0x6d7dca4cb320c94c!2m2!1d27.1555561!2d38.7351091!1m5!1m1!1s0x14b851472dfba2a3:0xad9b1b372c570696!2m2!1d28.0402778!2d38.4883333!1m5!1m1!1s0x14bbd8e3fa1744e7:0xfc15e392fd3613c8!2m2!1d27.1330121!2d38.4186948!1m5!1m1!1s0x14bbd85b1ee6cb8d:0x6a9bc8cd5752e270!2m2!1d27.1414413!2d38.4381638!1m5!1m1!1s0x14bb7a350dcffa85:0x699383ed74c72fb6!2m2!1d26.3035005!2d38.3234659!1m5!1m1!1s0x14bb7a35b5b9c735:0x278af8a0eb3e4276!2m2!1d26.3039755!2d38.3251871!1m5!1m1!1s0x14bb78dfaf0d56d9:0x29d825d486962be3!2m2!1d26.3778354!2d38.2887204!1m5!1m1!1s0x14bb7c5e2966ec4b:0x4b816954d33fb7d3!2m2!1d26.2810599!2d38.2679392!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Su Uçan Şelalesi, Turgutlar, 35660 Menemen/İzmir",
+      "Sardes Antik Kenti - Manisa, Zafer, Belediye Cd. No:124, 45300 Salihli/Manisa",
+      "Kemeraltı Çarşısı, Konak, Anafartalar Cd., 35250 Konak/İzmir",
+      "Kordon Alsancak İzmir, Alsancak, 35250 Konak/İzmir",
+      "Çeşme Kalesi, Musalla, 1015. Sk., 35930 Çeşme/İzmir",
+      "Ayios Haralambos Kilisesi, İsmet İnönü, Atatürk Blv., 35930 Çeşme/İzmir",
+      "Alaçatı, Çeşme/İzmir",
+      "ÇEŞME ALTINKUM PLAJ, Altınkum, Unnamed Road, 35930 Çeşme/İzmir"
+    ]
+  },
+  {
+    "id": 1780490058063,
+    "name": "3. İzmir - Çeşme ",
+    "mapLinks": [
+      {
+        "title": "3.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Su+U%C3%A7an+%C5%9Eelalesi,+Turgutlar,+35660+Menemen%2F%C4%B0zmir/Sardes+Antik+Kenti+-+Manisa,+Zafer,+Belediye+Cd.+No:124,+45300+Salihli%2FManisa/Kemeralt%C4%B1+%C3%87ar%C5%9F%C4%B1s%C4%B1,+Konak,+Anafartalar+Cd.,+35250+Konak%2F%C4%B0zmir/Kordon+Alsancak+%C4%B0zmir,+Alsancak,+35250+Konak%2F%C4%B0zmir/%C3%87e%C5%9Fme+Kalesi,+Musalla,+1015.+Sk.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ayios+Haralambos+Kilisesi,+%C4%B0smet+%C4%B0n%C3%B6n%C3%BC,+Atat%C3%BCrk+Blv.,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/Ala%C3%A7at%C4%B1,+%C3%87e%C5%9Fme%2F%C4%B0zmir/%C3%87E%C5%9EME+ALTINKUM+PLAJ,+Alt%C4%B1nkum,+Unnamed+Road,+35930+%C3%87e%C5%9Fme%2F%C4%B0zmir/@38.5572048,26.9911481,159524m/data=!3m1!1e3!4m50!4m49!1m5!1m1!1s0x14ba29cb6314d2b3:0x6d7dca4cb320c94c!2m2!1d27.1555561!2d38.7351091!1m5!1m1!1s0x14b851472dfba2a3:0xad9b1b372c570696!2m2!1d28.0402778!2d38.4883333!1m5!1m1!1s0x14bbd8e3fa1744e7:0xfc15e392fd3613c8!2m2!1d27.1330121!2d38.4186948!1m5!1m1!1s0x14bbd85b1ee6cb8d:0x6a9bc8cd5752e270!2m2!1d27.1414413!2d38.4381638!1m5!1m1!1s0x14bb7a350dcffa85:0x699383ed74c72fb6!2m2!1d26.3035005!2d38.3234659!1m5!1m1!1s0x14bb7a35b5b9c735:0x278af8a0eb3e4276!2m2!1d26.3039755!2d38.3251871!1m5!1m1!1s0x14bb78dfaf0d56d9:0x29d825d486962be3!2m2!1d26.3778354!2d38.2887204!1m5!1m1!1s0x14bb7c5e2966ec4b:0x4b816954d33fb7d3!2m2!1d26.2810599!2d38.2679392!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Su Uçan Şelalesi, Turgutlar, 35660 Menemen/İzmir",
+      "Sardes Antik Kenti - Manisa, Zafer, Belediye Cd. No:124, 45300 Salihli/Manisa",
+      "Kemeraltı Çarşısı, Konak, Anafartalar Cd., 35250 Konak/İzmir",
+      "Kordon Alsancak İzmir, Alsancak, 35250 Konak/İzmir",
+      "Çeşme Kalesi, Musalla, 1015. Sk., 35930 Çeşme/İzmir",
+      "Ayios Haralambos Kilisesi, İsmet İnönü, Atatürk Blv., 35930 Çeşme/İzmir",
+      "Alaçatı, Çeşme/İzmir",
+      "ÇEŞME ALTINKUM PLAJ, Altınkum, Unnamed Road, 35930 Çeşme/İzmir"
+    ]
+  },
+  {
+    "id": 1780490086558,
+    "name": "4. Çeşme - Denizli",
+    "mapLinks": [
+      {
+        "title": "4.etap Haritası",
+        "url": "https://www.google.com/maps/dir/%C5%9Eirince,+35920+Sel%C3%A7uk%2F%C4%B0zmir/Zeus+Ma%C4%9Faras%C4%B1,+G%C3%BCzel%C3%A7aml%C4%B1,+09430+Ku%C5%9Fadas%C4%B1%2FAyd%C4%B1n/Priene+%C3%96ren+Yeri,+G%C3%BCll%C3%BCbah%C3%A7e,+09230+S%C3%B6ke%2FAyd%C4%B1n/Arpaz+Kalesi,+Esenk%C3%B6y,+09800+Nazilli%2FAyd%C4%B1n/Afrodisias+Antik+Kenti+%C3%96renyeri,+Geyre,+09385+Karacasu%2FAyd%C4%B1n/Denizli+Hierapolis+(Pamukkale)+%C3%96ren+yeri,+Pamukkale,+20280+Pamukkale%2FDenizli/Kakl%C4%B1k+Ma%C4%9Faras%C4%B1+ve+Y%C3%BCzme+Havuzu,+Kakl%C4%B1k,+Haydar+Baba+Caddesi,+20240+Honaz%2FDenizli/Laodikeia+Antik+Kenti,+Goncal%C4%B1,+R4P5%2BHW,+20000+Merkez%2FPamukkale%2FDenizli/Pamukkale+Travertenleri,+Merkez,+20190+Pamukkale%2FDenizli/@38.3556024,26.2981594,598182m/data=!3m1!1e3!4m56!4m55!1m5!1m1!1s0x14b94cbfaf360b85:0x37a5b8ca1efaa11c!2m2!1d27.431625!2d37.944101!1m5!1m1!1s0x14bea0fc6f2c2ec9:0x44a727e0b97c445c!2m2!1d27.2157848!2d37.7112511!1m5!1m1!1s0x14bea26ed532c543:0x320934edf02aeabb!2m2!1d27.301017!2d37.6597223!1m5!1m1!1s0x14b8b718c7c5b9a7:0xbcbbebbc06373501!2m2!1d28.3486982!2d37.8063138!1m5!1m1!1s0x14c756fe3a3ff061:0x6462d1f03e82b979!2m2!1d28.7277923!2d37.7090827!1m5!1m1!1s0x14c7123078143189:0x9401976242555932!2m2!1d29.1232436!2d37.9248791!1m5!1m1!1s0x14c71d10ef8a4c83:0xaf8205026d417833!2m2!1d29.385274!2d37.855614!1m5!1m1!1s0x14c715b3e6275289:0xd07e2e5ffb29ef9f!2m2!1d29.1087807!2d37.8367423!1m5!1m1!1s0x14c7123a74a0e4d5:0x92c4f1427b58305b!2m2!1d29.1232377!2d37.9243909!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Şirince, 35920 Selçuk/İzmir",
+      "Zeus Mağarası, Güzelçamlı, 09430 Kuşadası/Aydın",
+      "Priene Ören Yeri, Güllübahçe, 09230 Söke/Aydın",
+      "Arpaz Kalesi, Esenköy, 09800 Nazilli/Aydın",
+      "Afrodisias Antik Kenti Örenyeri, Geyre, 09385 Karacasu/Aydın",
+      "Denizli Hierapolis (Pamukkale) Ören yeri, Pamukkale, 20280 Pamukkale/Denizli",
+      "Kaklık Mağarası ve Yüzme Havuzu, Kaklık, Haydar Baba Caddesi, 20240 Honaz/Denizli",
+      "Laodikeia Antik Kenti, Goncalı, R4P5+HW, 20000 Merkez/Pamukkale/Denizli",
+      "Pamukkale Travertenleri, Merkez, 20190 Pamukkale/Denizli"
+    ]
+  },
+  {
+    "id": 1780490227486,
+    "name": "5. Denizli - Muğla",
+    "mapLinks": [
+      {
+        "title": "5.Etap Haritası",
+        "url": "https://www.google.com/maps/dir/Laodikeia+Antik+Kenti,+Goncal%C4%B1,+R4P5%2BHW,+20000+Merkez%2FPamukkale%2FDenizli/G%C3%BCney+%C5%9Eelalesi+Milli+Park%C4%B1,+Cindere,+20460+G%C3%BCney%2FDenizli/Kakl%C4%B1k+Ma%C4%9Faras%C4%B1+ve+Y%C3%BCzme+Havuzu,+Kakl%C4%B1k,+Haydar+Baba+Caddesi,+20240+Honaz%2FDenizli/Lagina+Hekate+Tap%C4%B1na%C4%9F%C4%B1,+Turgut,+48540+Yata%C4%9Fan%2FMu%C4%9Fla/Bodrum,+Mu%C4%9Fla/Bodrum+Kalesi+ve+Sualt%C4%B1+Arkeoloji+M%C3%BCzesi,+%C3%87ar%C5%9F%C4%B1,+Kale+Cd.,+48400+Bodrum%2FMu%C4%9Fla/@37.0979528,25.941568,234581m/data=!3m1!1e3!4m38!4m37!1m5!1m1!1s0x14c715b3e6275289:0xd07e2e5ffb29ef9f!2m2!1d29.1087807!2d37.8367423!1m5!1m1!1s0x14c70aa44af46913:0xb7b8bb0e615101d4!2m2!1d29.0607027!2d38.1197844!1m5!1m1!1s0x14c71d10ef8a4c83:0xaf8205026d417833!2m2!1d29.385274!2d37.855614!1m5!1m1!1s0x14bf195f83fc7359:0x4d30dec47cd134cc!2m2!1d28.039438!2d37.378572!1m5!1m1!1s0x14be6c4faeb0d669:0x51a6e218f706590a!2m2!1d27.43054!2d37.034407!1m5!1m1!1s0x14be6c4234600e63:0x2bd4f1f586d41c71!2m2!1d27.4291652!2d37.0317978!3e0?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Laodikeia Antik Kenti, Goncalı, R4P5+HW, 20000 Merkez/Pamukkale/Denizli",
+      "Güney Şelalesi Milli Parkı, Cindere, 20460 Güney/Denizli",
+      "Kaklık Mağarası ve Yüzme Havuzu, Kaklık, Haydar Baba Caddesi, 20240 Honaz/Denizli",
+      "Lagina Hekate Tapınağı, Turgut, 48540 Yatağan/Muğla",
+      "Bodrum, Muğla",
+      "Bodrum Kalesi ve Sualtı Arkeoloji Müzesi, Çarşı, Kale Cd., 48400 Bodrum/Muğla"
+    ]
+  },
+  {
+    "id": 1780490329757,
+    "name": "6. Bodrum - Marmaris",
+    "mapLinks": [
+      {
+        "title": "6.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Bodrum+Kalesi/Eski+Dat%C3%A7a/Palamutb%C3%BCk%C3%BC/Knidos+Antik+Kenti/%C4%B0%C3%A7meler/Marmaris+Kalesi/Nimara+Ma%C4%9Faras%C4%B1/Azmak+Nehri,+Ula/"
+      }
+    ],
+    "places": [
+      "Bodrum Kalesi",
+      "Eski Datça",
+      "Palamutbükü",
+      "Knidos Antik Kenti",
+      "İçmeler",
+      "Marmaris Kalesi",
+      "Nimara Mağarası",
+      "Azmak Nehri, Ula"
+    ]
+  },
+  {
+    "id": 1780490369054,
+    "name": "7. Marmaris - Fethiye",
+    "mapLinks": [
+      {
+        "title": "7.etap Haritası",
+        "url": "google.com/maps/dir/Akyaka+Azmak+Nehri,+Akyaka,+Azmakboyu+Sk.,+48650+Ula%2FMuğla/Yuvarlakçay+Restaurant,+Yuvarlak+Çay+Location,+Beyobası,+48800+Köyceğiz%2FMuğla/Dalyan,+Ortaca%2FMuğla/İZTUZU+PLAJI,+Gökbel,+48600+Ortaca%2FMuğla/Kelebekler+Vadisi,+Faralya,+48000+Fethiye%2FMuğla/Kabak+Koyu,+Faralya,+Kabak+Sokak,+48300+Fethiye%2FMuğla/@36.8211646,28.3057673,203778m/data=!3m1!1e3!4m37!4m36!1m5!1m1!1s0x14bf9f00160dbc97:0xc49b8b9590ca9e07!2m2!1d28.3280684!2d37.0503519!1m5!1m1!1s0x14c07db0849d67a5:0x99127dfdc198d14a!2m2!1d28.7974818!2d36.9137687!1m5!1m1!1s0x14bf87d9a39c1afd:0x84dd3564569e4dd2!2m2!1d28.642607!2d36.834258!1m5!1m1!1s0x14bf88e0da08a73d:0x92291bc5c3786fc!2m2!1d28.6315771!2d36.7769424!1m5!1m1!1s0x14c03f97facb6037:0xaf8f4ce25388337d!2m2!1d29.1281666!2d36.4988702!1m5!1m1!1s0x14c03f8fd5c5eb3d:0x131493c45f3d3221!2m2!1d29.1257681!2d36.4616702?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Akyaka Azmak Nehri, Akyaka, Azmakboyu Sk., 48650 Ula/Muğla",
+      "Yuvarlakçay Restaurant, Yuvarlak Çay Location, Beyobası, 48800 Köyceğiz/Muğla",
+      "Dalyan, Ortaca/Muğla",
+      "İZTUZU PLAJI, Gökbel, 48600 Ortaca/Muğla",
+      "Kelebekler Vadisi, Faralya, 48000 Fethiye/Muğla",
+      "Kabak Koyu, Faralya, Kabak Sokak, 48300 Fethiye/Muğla"
+    ]
+  },
+  {
+    "id": 1780490523693,
+    "name": "8. Fethiye - Kaş",
+    "mapLinks": [
+      {
+        "title": "8.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Kabak+Koyu,+Faralya,+Kabak+Sokak,+48300+Fethiye%2FMu%C4%9Fla/Mavi+Ma%C4%9Fara,+Faralya,+48300+Fethiye%2FMu%C4%9Fla/Gizlikent+%C5%9Eelalesi,+Kayadibi,+mezgitler+Sokak+no+28,+48850+Seydikemer%2FMu%C4%9Fla/Tlos+Antik+Kenti,+Yakak%C3%B6y,+Sakl%C4%B1kent+Yolu,+48850+Fethiye%2FMu%C4%9Fla/Sakl%C4%B1kent+Milli+Park%C4%B1,+Kayadibi,+Sakl%C4%B1kent+Sokak+No+:+26,+48300+Seydikemer%2FMu%C4%9Fla/Patara+Antik+Kenti,+Kalkan,+07960+Ka%C5%9F%2FAntalya/Kaputa%C5%9F+Plaj%C4%B1,+Bezirgan,+07580+Kemer%2FKa%C5%9F%2FAntalya/Xanthos+Antik+Kenti,+K%C4%B1n%C4%B1k,+Asar+Cd.,+07970+Ka%C5%9F%2FAntalya/Ka%C5%9F,+Andifli,+07580+Ka%C5%9F%2FAntalya/@36.4210671,29.0454758,118330m/data=!3m2!1e3!4b1!4m55!4m54!1m5!1m1!1s0x14c03f8fd5c5eb3d:0x131493c45f3d3221!2m2!1d29.1257681!2d36.4616702!1m5!1m1!1s0x14c03f3bdcf68ded:0xe7d9d0c4135e5d75!2m2!1d29.1233169!2d36.5160676!1m5!1m1!1s0x14c04abdd70e4a69:0x82a64ba6a9c23ff!2m2!1d29.397798!2d36.4832306!1m5!1m1!1s0x14c04d83c57ea3bf:0x8ec7fb739f90327!2m2!1d29.420206!2d36.5542339!1m5!1m1!1s0x14c04aa8d2b88d5f:0x73cd5e161507819d!2m2!1d29.403431!2d36.4737581!1m5!1m1!1s0x14c02d299fe9a7cd:0x15498ee97f108be1!2m2!1d29.3154847!2d36.2614096!1m5!1m1!1s0x14c1d37060c20369:0xb0509cbcd714c4d5!2m2!1d29.448939!2d36.2289562!1m5!1m1!1s0x14c02d2b00000001:0xd4c7a08ac6d7da01!2m2!1d29.3183278!2d36.3565731!1m5!1m1!1s0x14c1da54a506cf4d:0xcfbf502fb3cb4db3!2m2!1d29.63955!2d36.199913?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Kabak Koyu, Faralya, Kabak Sokak, 48300 Fethiye/Muğla",
+      "Mavi Mağara, Faralya, 48300 Fethiye/Muğla",
+      "Gizlikent Şelalesi, Kayadibi, mezgitler Sokak no 28, 48850 Seydikemer/Muğla",
+      "Tlos Antik Kenti, Yakaköy, Saklıkent Yolu, 48850 Fethiye/Muğla",
+      "Saklıkent Milli Parkı, Kayadibi, Saklıkent Sokak No : 26, 48300 Seydikemer/Muğla",
+      "Patara Antik Kenti, Kalkan, 07960 Kaş/Antalya",
+      "Kaputaş Plajı, Bezirgan, 07580 Kemer/Kaş/Antalya",
+      "Xanthos Antik Kenti, Kınık, Asar Cd., 07970 Kaş/Antalya",
+      "Kaş, Andifli, 07580 Kaş/Antalya"
+    ]
+  },
+  {
+    "id": 1780490551565,
+    "name": "9. Kaş - Demre - Finike - Kemer",
+    "mapLinks": [
+      {
+        "title": "9.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Ka%C5%9F,+Andifli,+07580+Ka%C5%9F%2FAntalya/Myra+Antik+Kenti,+Myra+%C3%96renyeri%2FMyra+Antik+Kenti,+Alakent,+07570+Demre%2FAntalya/St.+Nicholas+Kilisesi,+Merkez+Mahallesi,+07570+Demre+(Kale)%2FDemre%2FAntalya/Finike+Suluin+Ma%C4%9Faras%C4%B1,+Finike+Demre+Karayolu,+%C3%BCzeri,+07740+Finike%2FAntalya/G%C3%B6yn%C3%BCk+Kanyonu,+Beldibi,+%C3%87omaklar+Mevkii+MGJM%2BRF+No:73,+07982+Kemer%2FAntalya/Phaselis+%C3%96renyeri,+Tekirova,+8011+Sokak+No:1,+07990+Kemer%2FAntalya/Olimpos+Plaj%C4%B1,+Ulup%C4%B1nar,+07982+Kemer%2FAntalya/Yanarta%C5%9F+Milli+Park%C4%B1,+Kuzdere,+07980+Kemer%2FAntalya/@36.4407862,29.7680717,118300m/data=!3m2!1e3!4b1!4m49!4m48!1m5!1m1!1s0x14c1da54a506cf4d:0xcfbf502fb3cb4db3!2m2!1d29.63955!2d36.199913!1m5!1m1!1s0x14c1f20daaaaaaab:0x5b0823a7d917edc2!2m2!1d29.9851405!2d36.2588782!1m5!1m1!1s0x14c1f20daaaaaaab:0xdad8c9d69a8675e9!2m2!1d29.9853427!2d36.2448616!1m5!1m1!1s0x14c18b5d69e526bf:0xfd042e00f74a40da!2m2!1d30.150046!2d36.2821821!1m5!1m1!1s0x14c3b89ecfa4f447:0xc5ec08ed64f2f2cc!2m2!1d30.5340986!2d36.6826103!1m5!1m1!1s0x14c3b5c03f811177:0x6b65b38b55449cd7!2m2!1d30.5520265!2d36.5251534!1m5!1m1!1s0x14c23688d5941d43:0x67f6609d433d9788!2m2!1d30.4805996!2d36.4093789!1m5!1m1!1s0x14c2343f3a2b26c7:0x19db5331c84857ef!2m2!1d30.4563828!2d36.4311275?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Kaş, Andifli, 07580 Kaş/Antalya",
+      "Myra Antik Kenti, Myra Örenyeri/Myra Antik Kenti, Alakent, 07570 Demre/Antalya",
+      "St. Nicholas Kilisesi, Merkez Mahallesi, 07570 Demre (Kale)/Demre/Antalya",
+      "Finike Suluin Mağarası, Finike Demre Karayolu, üzeri, 07740 Finike/Antalya",
+      "Göynük Kanyonu, Beldibi, Çomaklar Mevkii MGJM+RF No:73, 07982 Kemer/Antalya",
+      "Phaselis Örenyeri, Tekirova, 8011 Sokak No:1, 07990 Kemer/Antalya",
+      "Olimpos Plajı, Ulupınar, 07982 Kemer/Antalya",
+      "Yanartaş Milli Parkı, Kuzdere, 07980 Kemer/Antalya"
+    ]
+  },
+  {
+    "id": 1780490591221,
+    "name": "10. Antalya - Burdur",
+    "mapLinks": [
+      {
+        "title": "10.etap Haritası",
+        "url": "https://www.google.com/maps/dir/Yanarta%C5%9F+Milli+Park%C4%B1,+Kuzdere,+07980+Kemer%2FAntalya/Kalei%C3%A7i,+Sel%C3%A7uk,+07100+Muratpa%C5%9Fa%2FAntalya/Perge+%C3%96renyeri,+Barbaros,+Perge+Yolu,+07112+Aksu%2FAntalya/Aspendos+Antik+Tiyatrosu,+Belk%C4%B1s,+Aspendos+Yolu,+07500+Serik%2FAntalya/Manavgat+%C5%9Eelalesi,+Sar%C4%B1lar,+istiklal+caddesi+No:4,+07600+Manavgat%2FAntalya/Yukar%C4%B1+D%C3%BCden+%C5%9Eelalesi,+Varsak+Mahallesi+D%C3%BCden+%C5%9Eelalesi+Park%C4%B1+i%C3%A7i,+Kepez%2FAntalya/Karain+Ma%C4%9Faras%C4%B1,+Ya%C4%9Fca,+07190+Antalya+Merkez%2FAntalya/Sagalassos+%C3%96renyeri,+K%C4%B1ra%C3%A7,+15800+A%C4%9Flasun%2FBurdur/%C4%B0nsuyu+Ma%C4%9Faras%C4%B1,+%C4%B0nsuyu,+15000+%C3%87ata%C4%9F%C4%B1l%2FBurdur+Merkez%2FBurdur/@37.0392565,30.2531706,234763m/data=!3m1!1e3!4m56!4m55!1m5!1m1!1s0x14c2343f3a2b26c7:0x19db5331c84857ef!2m2!1d30.4563828!2d36.4311275!1m5!1m1!1s0x14c390069cad945f:0xdae5fa1b55b3ba73!2m2!1d30.7049967!2d36.8862715!1m5!1m1!1s0x14c381a96a370743:0xc68467e8d8ebb407!2m2!1d30.8525386!2d36.957694!1m5!1m1!1s0x14c49e7638f76edd:0x82aaad9ddfd636b6!2m2!1d31.1721993!2d36.9389411!1m5!1m1!1s0x14c35709367f1dd1:0x7b6765df94fc38ac!2m2!1d31.4532539!2d36.8129911!1m5!1m1!1s0x14c38609ce7b71bb:0x72b76ecab61aa788!2m2!1d30.7267783!2d36.9647146!1m5!1m1!1s0x14c38a863330bc55:0x9491e6c9de083d3!2m2!1d30.5708333!2d37.0777778!1m5!1m1!1s0x14c43583dcecb491:0x78e5fdf4d67f7360!2m2!1d30.5215496!2d37.6783848!1m5!1m1!1s0x14c431bb9fdc6425:0x841c01d11dcc8d1b!2m2!1d30.3752242!2d37.6594092!3e0?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "Yanartaş Milli Parkı, Kuzdere, 07980 Kemer/Antalya",
+      "Kaleiçi, Selçuk, 07100 Muratpaşa/Antalya",
+      "Perge Örenyeri, Barbaros, Perge Yolu, 07112 Aksu/Antalya",
+      "Aspendos Antik Tiyatrosu, Belkıs, Aspendos Yolu, 07500 Serik/Antalya",
+      "Manavgat Şelalesi, Sarılar, istiklal caddesi No:4, 07600 Manavgat/Antalya",
+      "Yukarı Düden Şelalesi, Varsak Mahallesi Düden Şelalesi Parkı içi, Kepez/Antalya",
+      "Karain Mağarası, Yağca, 07190 Antalya Merkez/Antalya",
+      "Sagalassos Örenyeri, Kıraç, 15800 Ağlasun/Burdur",
+      "İnsuyu Mağarası, İnsuyu, 15000 Çatağıl/Burdur Merkez/Burdur"
+    ]
+  },
+  {
+    "id": 1780490726988,
+    "name": "11. Burdur - Isparta - Konya - Aksaray - Nevşehir - Ankara",
+    "mapLinks": [
+      {
+        "title": "11.etap Haritası",
+        "url": "https://www.google.com/maps/dir/%C4%B0nsuyu+Ma%C4%9Faras%C4%B1,+%C4%B0nsuyu,+15000+%C3%87ata%C4%9F%C4%B1l%2FBurdur+Merkez%2FBurdur/E%C4%9Firdir+Kalesi,+Kale,+Uzun+%C3%87ar%C5%9F%C4%B1+Sk.,+32500+E%C4%9Firdir%2FIsparta/Kilistra+tarihi+yer,+Kilistra,+42005+Meram%2FKonya/Mevlana+M%C3%BCzesi,+Aziziye,+Mevlana+Cd.+No:1,+42030+Karatay%2FKonya/%C3%87atalh%C3%B6y%C3%BCk+%C3%96renyeri,+K%C3%BC%C3%A7%C3%BCkk%C3%B6y,+%C3%87atalh%C3%B6y%C3%BCk+Yolu,+42500+%C3%87umra%2FKonya/Ihlara,+Kayaard%C4%B1,+68570+Ihlara%2FG%C3%BCzelyurt%2FAksaray/Viran%C5%9Fehir+(Mokisos+antik+kenti),+Cumhuriyet+Mahallesi,+Unnamed+Road,+68000,+Helvadere%2FAksaray+Merkez%2FAksaray/G%C3%B6reme+A%C3%A7%C4%B1k+Hava+M%C3%BCzesi,+%C4%B0sali+-+Gaferli+-+Avc%C4%B1lar,+50180+G%C3%B6reme%2FNev%C5%9Fehir+Merkez%2FNev%C5%9Fehir/Ankara/@38.773777,31.2504615,458585m/data=!3m1!1e3!4m56!4m55!1m5!1m1!1s0x14c431bb9fdc6425:0x841c01d11dcc8d1b!2m2!1d30.3752242!2d37.6594092!1m5!1m1!1s0x14c5a0e0819c42f1:0xd7a110f0280a8ce9!2m2!1d30.8531217!2d37.8762904!1m5!1m1!1s0x14da8f9ce2a325c5:0x9a24dc65ab14738b!2m2!1d32.2135036!2d37.6661447!1m5!1m1!1s0x14d0851041d7b9a3:0x843bb18685ba9410!2m2!1d32.504999!2d37.8707281!1m5!1m1!1s0x14d0a73eec8e512d:0x963a6c2aaf521b79!2m2!1d32.8265704!2d37.6680469!1m5!1m1!1s0x14d60fc188759b91:0xeb006bf365b859d0!2m2!1d34.306363!2d38.238506!1m5!1m1!1s0x14d61372735fb905:0x49b420fcc022e066!2m2!1d34.2068181!2d38.1893319!1m5!1m1!1s0x152a67ece7bbe4ed:0xbbca14b0d18fccfe!2m2!1d34.8439267!2d38.6415792!1m5!1m1!1s0x14d347d520732db1:0xbdc57b0c0842b8d!2m2!1d32.8597419!2d39.9333635!3e0?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ],
+    "places": [
+      "İnsuyu Mağarası, İnsuyu, 15000 Çatağıl/Burdur Merkez/Burdur",
+      "Eğirdir Kalesi, Kale, Uzun Çarşı Sk., 32500 Eğirdir/Isparta",
+      "Kilistra tarihi yer, Kilistra, 42005 Meram/Konya",
+      "Mevlana Müzesi, Aziziye, Mevlana Cd. No:1, 42030 Karatay/Konya",
+      "Çatalhöyük Örenyeri, Küçükköy, Çatalhöyük Yolu, 42500 Çumra/Konya",
+      "Ihlara, Kayaardı, 68570 Ihlara/Güzelyurt/Aksaray",
+      "Viranşehir (Mokisos antik kenti), Cumhuriyet Mahallesi, Unnamed Road, 68000, Helvadere/Aksaray Merkez/Aksaray",
+      "Göreme Açık Hava Müzesi, İsali - Gaferli - Avcılar, 50180 Göreme/Nevşehir Merkez/Nevşehir",
+      "Ankara"
+    ]
+  }
 ]
